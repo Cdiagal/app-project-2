@@ -1,7 +1,9 @@
-package es.cdiagal.taskyourself.backend.model;
+package es.cdiagal.taskyourself.backend.model.gestorUsuarios;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+
+import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 
 /**
  * Clase GestorUsuariosModel.

@@ -1,6 +1,8 @@
-package es.cdiagal.taskyourself.backend.model;
+package es.cdiagal.taskyourself.backend.model.recordatorio;
 import java.time.LocalDateTime;
 import java.util.Objects;
+
+import es.cdiagal.taskyourself.backend.model.notificacion.NotificacionModel;
 
 /**
  * Clase RecordatorioModel.

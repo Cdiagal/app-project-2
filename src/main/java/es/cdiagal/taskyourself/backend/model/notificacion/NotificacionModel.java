@@ -1,4 +1,4 @@
-package es.cdiagal.taskyourself.backend.model;
+package es.cdiagal.taskyourself.backend.model.notificacion;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

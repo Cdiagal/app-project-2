@@ -1,5 +1,7 @@
-package es.cdiagal.taskyourself.backend.model;
+package es.cdiagal.taskyourself.backend.model.administrador;
 import java.util.Objects;
+
+import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 
 /**
  * Clase AdministradorModel.

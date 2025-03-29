@@ -1,4 +1,4 @@
-package es.cdiagal.taskyourself.backend.model.initApp;
+package es.cdiagal.taskyourself.initApp;
 
 
 import java.io.IOException;

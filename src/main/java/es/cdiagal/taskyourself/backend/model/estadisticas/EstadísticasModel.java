@@ -1,4 +1,4 @@
-package es.cdiagal.taskyourself.backend.model;
+package es.cdiagal.taskyourself.backend.model.estadisticas;
 import java.util.Objects;
 
 /**
