@@ -3,11 +3,11 @@ import java.util.Objects;
 
 /**
  * Clase AdministradorModel.
- * 
+ *
  * Subclase de UsuarioModel que representa a un administrador del sistema.
  * Además de los atributos de un usuario genérico, contiene un nivel de permisos
  * que define su capacidad administrativa dentro de la aplicación.
- * 
+ *
  * @author cdiagal
  * @version 1.0.0
  */

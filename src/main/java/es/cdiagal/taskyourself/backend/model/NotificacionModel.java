@@ -5,11 +5,11 @@ import java.util.Objects;
 
 /**
  * Clase NotificacionModel.
- * 
+ *
  * Representa una notificación generada en el sistema. Almacena información
  * como el mensaje, destinatario, tipo de notificación y el estado (si fue
  * enviada o no).
- * 
+ *
  * @author cdiagal
  * @version 1.0.0
  */
