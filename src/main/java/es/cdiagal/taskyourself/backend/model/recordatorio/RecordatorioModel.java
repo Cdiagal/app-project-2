@@ -18,9 +18,9 @@ public class RecordatorioModel extends NotificacionModel {
     private LocalDateTime fechaRecordatorio;
 
     //Constructor vacío.
-   public RecordatorioModel (){
+    public RecordatorioModel (){
 
-   }
+    }
 
     //Constructor de la clase con todas las propiedades heredadas de NotificacionModel y las propias.
     public RecordatorioModel(String idNotificacion, String destinatario, String mensaje, String tipo, boolean confirmaEnviada, LocalDateTime fechaCreacion, LocalDateTime fechaRecordatorio) {
