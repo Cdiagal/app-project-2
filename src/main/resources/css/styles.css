@@ -9,7 +9,7 @@
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: rgb(236, 235, 231);
+    -fx-background-color: rgb(245, 243, 236);
     -fx-border-width: 2px;
     -fx-alignment: center;
     -fx-content-display: center;
@@ -45,11 +45,28 @@
     -fx-text-align: center;
     -fx-font-size: 16px;
     -fx-border-color: #000000;
-    -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: rgb(236, 235, 231);
+    -fx-background-color: rgb(245, 243, 236);
     -fx-border-width: 2px;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-padding: 5px;
+    -fx-text-alignment: center;
+    -fx-cursor: hand;
+}
+
+/*anchor pane init front*/
+
+/*boton de registro*/
+.anchorPaneInitFront{
+    -fx-text-align: center;
+    -fx-font-size: 16px;
+    -fx-border-color: #08476F;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #87c2f3b6;
+    -fx-border-width: 4px;
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;

@@ -26,6 +26,9 @@ public class InitAppController {
     
     @FXML
     protected JFXButton settingsButton;
+
+    @FXML
+    protected AnchorPane anchorPaneInitFront;
     
 
     /**
