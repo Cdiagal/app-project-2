@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" style="-fx-background-color: 000000; -fx-border-color: #000000; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.init.InitAppController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" style="-fx-background-color: 000000; -fx-border-color: #08476F; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.init.InitAppController">
    <children>
-      <AnchorPane fx:id="anchorPaneInitFront" layoutX="111.0" layoutY="297.0" prefHeight="234.0" prefWidth="302.0" styleClass="anchorPaneInitFront" stylesheets="@../../../../css/styles.css" />
+      <AnchorPane fx:id="anchorPaneInitFront" layoutX="111.0" layoutY="297.0" opacity="0.54" prefHeight="234.0" prefWidth="302.0" styleClass="anchorPaneInitFront" stylesheets="@../../../../css/styles.css" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="102.0" />
       <ImageView fx:id="taskYourselfLogo" fitHeight="247.0" fitWidth="249.0" layoutX="136.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="318.0" AnchorPane.leftAnchor="136.0" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="35.0">
          <image>
             <Image url="@../../../../imagesFxml/LogoTaskYourself.png" />
@@ -27,12 +27,12 @@
          </graphic>
       </JFXButton>
       <Text fx:id="textAdviseInit" layoutX="255.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="15.0" />
-      <Label fx:id="loginLabel" layoutX="238.0" layoutY="311.0" text="Login" textFill="WHITE">
+      <Label fx:id="loginLabel" layoutX="238.0" layoutY="311.0" text="Login">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="registroLabel" layoutX="227.0" layoutY="431.0" text="Registro" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="registroLabel" layoutX="227.0" layoutY="431.0" text="Registro" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

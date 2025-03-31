@@ -72,8 +72,7 @@
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
-    -fx-text-alignment: center;
-    -fx-cursor: hand;
+    
 }
 
 .loginTextLabel{
