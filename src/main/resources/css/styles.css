@@ -76,7 +76,6 @@
 
 /*Logo Taskyourself*/
 
-
 .taskYourselfLogo{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
 }
