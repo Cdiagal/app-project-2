@@ -58,9 +58,8 @@
     -fx-cursor: hand;
 }
 
-/*anchor pane init front*/
+/*anchorPane init front*/
 
-/*boton de registro*/
 .anchorPaneInitFront{
     -fx-text-align: center;
     -fx-font-size: 16px;
@@ -72,11 +71,16 @@
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
-    
-}
-
-.loginTextLabel{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
 }
+
+/*Logo Taskyourself*/
+
+
+.taskYourselfLogo{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+}
+
+
 
 
