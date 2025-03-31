@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
@@ -8,12 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<!--Documento que almacena toda la informacion grafica de InitAppController-->
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
    minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" style="-fx-background-color: 000000;"
    xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
    fx:controller="es.cdiagal.taskyourself.backend.controller.init.InitAppController">
    <children>
+      <!--Logo Taskyourself-->
       <ImageView fx:id="taskYourselfLogo" fitHeight="247.0" fitWidth="249.0" layoutX="138.0"
          layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="323.0"
          AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="30.0">
@@ -21,29 +24,42 @@
             <Image url="@../../../../imagesFxml/LogoTaskYourself.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="loginButton" layoutX="191.0" layoutY="335.0" onAction="#onClicOpenLogin"
+      <!--Logo label-->
+      <Label fx:id="logoLabel" layoutX="148.0" layoutY="235.0"
+         text="Manage your time, conquer your goals!" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <!--Login Button-->
+      <JFXButton fx:id="loginButton" layoutX="190.0" layoutY="345.0" onAction="#onClicOpenLogin"
          prefHeight="35.0" prefWidth="138.0" styleClass="loginButton"
          stylesheets="@../../../../css/styles.css" text="Iniciar sesión" />
+      <!--Register Button-->
       <JFXButton fx:id="registerButton" layoutX="190.0" layoutY="466.0"
-         onAction="#onClicOpenRegister" prefHeight="35.0" prefWidth="138.0" styleClass="loginButton"
-         stylesheets="@../../../../css/styles.css" text="Registrarse" />
-      <JFXButton fx:id="settingsButton" layoutX="450.0" layoutY="30.0"
-         onAction="#onClicOpenSettings" prefHeight="25.0" prefWidth="25.0"
+         onAction="#onClicOpenRegister" prefHeight="35.0" prefWidth="138.0"
+         styleClass="registerButton" stylesheets="@../../../../css/styles.css" text="Registrarse" />
+      <!--Settings Button-->
+      <JFXButton fx:id="settingsButton" onAction="#onClicOpenSettings" prefHeight="40.0"
+         prefWidth="40.0"  minHeight="40.0" minWidth="40.0" maxHeight="40.0" maxWidth="40.0"
          styleClass="settingsButton" stylesheets="@../../../../css/styles.css"
          AnchorPane.bottomAnchor="524.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="25.0"
-         AnchorPane.topAnchor="30.0">
+         AnchorPane.topAnchor="30.0" text="">
          <graphic>
-            <FontIcon iconLiteral="fas-cog" iconSize="40" iconColor="black" />
+            <FontIcon iconColor="black" iconLiteral="fas-cog" iconSize="40" />
          </graphic>
       </JFXButton>
-      <Text fx:id="textAdviseInit" layoutX="247.0" layoutY="394.0" strokeType="OUTSIDE"
-         strokeWidth="0.0" />
-      <Label fx:id="loginLabel" layoutX="235.0" layoutY="286.0" text="Login">
+      <!--Advise Init-->
+      <Text fx:id="textAdviseInit" layoutX="252.0" layoutY="411.0" strokeType="OUTSIDE"
+         strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="15.0" />
+      <!--Login label-->
+      <Label fx:id="loginLabel" layoutX="235.0" layoutY="311.0" text="Login">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="registroLabel" layoutX="224.0" layoutY="425.0" text="Registro"
+      <!--Registro label-->
+      <Label fx:id="registroLabel" layoutX="224.0" layoutY="431.0" text="Registro"
          textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />

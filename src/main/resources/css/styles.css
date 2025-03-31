@@ -1,3 +1,7 @@
+/*fichero que gestiona las formas y texturas de los elementos del fxml*/
+
+
+/*boton de login*/
 .loginButton{
     -fx-text-align: center;
     -fx-font-size: 16px;
@@ -5,30 +9,50 @@
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: transparent;
+    -fx-background-color: rgb(236, 235, 231);
     -fx-border-width: 2px;
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
     -fx-text-alignment: center;
+    -fx-cursor: hand;
 }
 
-.settingsButton{
+/*boton de settings*/
 
+.settingsButton{
+    -jfx-button-type: FLAT;
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
+    -fx-border-color: transparent;
+    -fx-background-color:transparent;
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-content-display: graphic-only;
+    -fx-padding: 0px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -fx-cursor: hand;
+}
+
+
+/*boton de registro*/
+.registerButton{
     -fx-text-align: center;
     -fx-font-size: 16px;
-    -fx-border-color: transparent;
-    -fx-border-color: transparent;
-    -fx-border-radius: 50px;
-    -fx-background-radius: 50px;
-    -fx-min-width: 50px;
-    -fx-min-height: 50px;
-    -fx-max-width: 50px;
-    -fx-max-height: 50px;
-    -fx-background-color: transparent;
+    -fx-border-color: #000000;
+    -fx-border-color: #000000;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: rgb(236, 235, 231);
     -fx-border-width: 2px;
     -fx-alignment: center;
     -fx-content-display: center;
-    -fx-padding: 0px;
+    -fx-padding: 5px;
     -fx-text-alignment: center;
+    -fx-cursor: hand;
 }
