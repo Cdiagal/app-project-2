@@ -5,6 +5,7 @@
 .loginButton{
     -fx-text-align: center;
     -fx-font-size: 16px;
+    -fx-font-weight: 300;
     -fx-border-color: #000000;
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
@@ -44,6 +45,7 @@
 .registerButton{
     -fx-text-align: center;
     -fx-font-size: 16px;
+    -fx-font-weight: 300;
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
@@ -73,3 +75,9 @@
     -fx-text-alignment: center;
     -fx-cursor: hand;
 }
+
+.loginTextLabel{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+}
+
+
