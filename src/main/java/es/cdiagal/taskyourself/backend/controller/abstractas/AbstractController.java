@@ -13,13 +13,25 @@ import es.cdiagal.taskyourself.backend.model.utils.Service.UsuarioServiceModel;
  * @version 1.0.0
  */
 
-public class AbstractController {
+public abstract class AbstractController {
+
+    /**
+     * Ruta de la base de datos.
+     */
     static final String PATH_DB =  "src/main/resources/usuarios.db";
+
+    /**
+     * Atributos privados de la clase.
+     */
 
     private UsuarioServiceModel usuarioServiceModel;
 
     private Properties propertiesIdioma;
 
+
+    /**
+     * Constructor de la clase que crea una instancia de usuario usando la ruta de la BBDD.
+     */
     public AbstractController() {
         try {
             usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
@@ -28,7 +40,10 @@ public class AbstractController {
         }
     }
 
-
+    /**
+     * Getters y setters para los idiomas.
+     * @param properties
+     */
     public void setpropertiesIdioma(Properties properties) {
         propertiesIdioma = properties;
     }
@@ -37,7 +52,12 @@ public class AbstractController {
         return propertiesIdioma;
     }
 
-
+    /**
+     * Carga los idiomas alojados en los .properties.
+     * @param nombreFichero
+     * @param idioma
+     * @return loadIdioma.
+     */
     public Properties loadIdioma(String nombreFichero, String idioma) {
         Properties properties = new Properties();
         
@@ -66,6 +86,10 @@ public class AbstractController {
     }
 
 
+    /**
+     * Getter de la clase.
+     * @return usuarioServiceModel.
+     */
     public UsuarioServiceModel getUsuarioServiceModel() {
         return this.usuarioServiceModel;
     }

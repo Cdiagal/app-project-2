@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @version 1.0.0
  */
 
-public class Conexion {
+public abstract class Conexion {
     private String rutaArchivoBD;
     private Connection connection;
 
