@@ -12,7 +12,10 @@ import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
 import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 public class UsuarioServiceModel extends Conexion{
 
+
 private String rutaDB;
+
+
 
 public UsuarioServiceModel(){
     
@@ -25,13 +28,12 @@ public UsuarioServiceModel(String rutaDB){
 
 
 /**
- * Metodo que lista todos los usuarios que se encuentran en la base de datos.
- * @return Lista de usuarios con sus atributos.
+ * Metodo que busca un usuario con sus atributos..
+ * @return Usuario.
  */
-public List<UsuarioModel> loadAll(){
+public List<UsuarioModel> loadUser(String sql){
     List<UsuarioModel> usuarios = new ArrayList<>();
     try {
-        String sql = "SELECT * from usuario";
         conectar();
         PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
         ResultSet cursor = preparedStatement.executeQuery();
@@ -45,33 +47,44 @@ public List<UsuarioModel> loadAll(){
         }
     } catch (Exception e) {
         e.printStackTrace();
+    } finally {
+        cerrar();
     }
     return usuarios;
 }
 
-public UsuarioModel loadUserbyEmail (String email){
-    UsuarioModel usuario = null;
-    String sql = "SELECT * from usuario WHERE id = ?";
-    try {
-        conectar();
-        PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
-        preparedStatement.setString(1, email);
-        ResultSet cursor = preparedStatement.executeQuery();
-        if(cursor.next()){
-            usuario = new UsuarioModel();
-            String id = cursor.getString("id");
+/**
+ * Metodo que lista todos los usuarios.
+ * @return lista de usuarios.
+ */
+public List<UsuarioModel> loadAllUsers(){
+    String sql = "SELECT * FROM Usuario";
+    return loadUser(sql);
+}
 
-            
-        }
-    } catch (SQLException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+/**
+ * Metodo que busca un usuario por su email.
+ * @param email del usuario.
+ * @return usuario.
+ */
+public UsuarioModel loadUserbyEmail (String email){
+    try {
+        String sql = "SELECT * FROM Usuario " + "where email='"+email+"'";
+    List<UsuarioModel> usuarios = loadUser(sql);
+    if (usuarios.isEmpty()) {
+        return null;
     }
-    
+    return usuarios.get(0);
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        cerrar();
+    } 
+    return null;
 }
 /**
  * Metodo que aniade un nuevo usuario con los atributos.
- * @param newUser
+ * @param newUser a crear.
  * @return nuevo usuario.
  */
 public boolean addUser (UsuarioModel newUser){
@@ -83,13 +96,60 @@ public boolean addUser (UsuarioModel newUser){
         preparedStatement.setString(2, newUser.getNombre());
         preparedStatement.setString(3, newUser.getPassword());
         preparedStatement.setString(4, newUser.getEmail());
+        preparedStatement.execute();
         return true;
     } catch (Exception e) {
         e.printStackTrace();
+        return false;
+    } finally {
+        cerrar();
     }
-    return false;
 }
 
+/**
+ * Método que actualiza un usuario.
+ * @param usuario de la base de datos.
+ * @return usuario actualizado.
+ */
+public boolean updateUser(UsuarioModel usuario) {
+    String sql = "UPDATE usuario SET nombre = ?, contrasenia = ? WHERE email = ?";
+    try {
+        conectar();
+        PreparedStatement stmt = getConnection().prepareStatement(sql);
+        stmt.setString(1, usuario.getNombre());
+        stmt.setString(2, usuario.getPassword());
+        stmt.setString(3, usuario.getEmail());
+        int filas = stmt.executeUpdate();
+        return filas > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        cerrar();
+    }
+}
+
+
+/**
+ * Metodo que elimina un usuario.
+ * @param email del usuario.
+ * @return usuario eliminado.
+ */
+public boolean deleteUser(String email) {
+    String sql = "DELETE FROM usuario WHERE email = ?";
+    try {
+        conectar();
+        PreparedStatement stmt = getConnection().prepareStatement(sql);
+        stmt.setString(1, email);
+        int filas = stmt.executeUpdate();
+        return filas > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        cerrar();
+    }
+}
 
 
 }
