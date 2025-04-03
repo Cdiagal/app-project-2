@@ -5,11 +5,11 @@ import java.util.Objects;
 
 /**
  * Clase SistemaModel
- * 
+ *
  * Representa el sistema principal encargado de gestionar notificaciones
  * en la aplicación. No almacena usuarios ni tareas, pero actúa como un
  * servicio para generar y enviar notificaciones.
- * 
+ *
  * @author cdiagal
  * @version 1.0.0
  */
