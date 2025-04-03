@@ -1,12 +1,94 @@
 package es.cdiagal.taskyourself.backend.model.utils.Service;
 
-import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
+import java.security.interfaces.RSAKey;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
+import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
+import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 public class UsuarioServiceModel extends Conexion{
 
-    public UsuarioServiceModel(String PATH_DB) {
+private String rutaDB;
 
+public UsuarioServiceModel(){
+    
+}
+
+public UsuarioServiceModel(String rutaDB){
+    super(rutaDB);
+    this.rutaDB = rutaDB;
+}
+
+
+/**
+ * Metodo que lista todos los usuarios que se encuentran en la base de datos.
+ * @return Lista de usuarios con sus atributos.
+ */
+public List<UsuarioModel> loadAll(){
+    List<UsuarioModel> usuarios = new ArrayList<>();
+    try {
+        String sql = "SELECT * from usuario";
+        conectar();
+        PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        ResultSet cursor = preparedStatement.executeQuery();
+        while (cursor.next()) {
+            String id = cursor.getString("id");
+            String nombre = cursor.getString("nombre");
+            String contrasenia = cursor.getString("contrasenia");
+            String email = cursor.getString("email");
+            UsuarioModel usuario = new UsuarioModel(id, nombre, contrasenia, email);
+            usuarios.add(usuario);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+    return usuarios;
+}
+
+public UsuarioModel loadUserbyEmail (String email){
+    UsuarioModel usuario = null;
+    String sql = "SELECT * from usuario WHERE id = ?";
+    try {
+        conectar();
+        PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        preparedStatement.setString(1, email);
+        ResultSet cursor = preparedStatement.executeQuery();
+        if(cursor.next()){
+            usuario = new UsuarioModel();
+            String id = cursor.getString("id");
+
+            
+        }
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    
+}
+/**
+ * Metodo que aniade un nuevo usuario con los atributos.
+ * @param newUser
+ * @return nuevo usuario.
+ */
+public boolean addUser (UsuarioModel newUser){
+    try {
+        conectar();
+        PreparedStatement preparedStatement = getConnection().prepareStatement(
+                    "INSERT INTO usuario (id, nombre, contrasenia, email) values (?,?,?,?)");
+        preparedStatement.setString(1, newUser.getId());
+        preparedStatement.setString(2, newUser.getNombre());
+        preparedStatement.setString(3, newUser.getPassword());
+        preparedStatement.setString(4, newUser.getEmail());
+        return true;
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return false;
+}
 
 
 

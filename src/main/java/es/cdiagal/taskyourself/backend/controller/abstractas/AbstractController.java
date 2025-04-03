@@ -27,14 +27,23 @@ public abstract class AbstractController {
     private UsuarioServiceModel usuarioServiceModel;
 
     private Properties propertiesIdioma;
+    private static String idiomaActual = "español";
 
+
+    public static String getIdiomaActual(){
+        return idiomaActual;
+    }
+    public static void setIdiomaActual(String idioma){
+        idiomaActual = idioma;
+    }
 
     /**
      * Constructor de la clase que crea una instancia de usuario usando la ruta de la BBDD.
      */
+    
     public AbstractController() {
         try {
-            usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
+            this.usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,7 +58,7 @@ public abstract class AbstractController {
     }
 
     public Properties getPropertiesIdioma() {
-        return propertiesIdioma;
+        return this.propertiesIdioma;
     }
 
     /**

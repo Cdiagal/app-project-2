@@ -28,6 +28,8 @@ public abstract class Conexion {
     public Conexion(String unaRutaArchivoBD){
         if (unaRutaArchivoBD == null || unaRutaArchivoBD.isEmpty()){
             System.out.println("La base de datos es nula o está vacía.");
+        } else {
+            this.rutaArchivoBD = unaRutaArchivoBD;
         }
     }
 
@@ -41,7 +43,7 @@ public abstract class Conexion {
     public Connection getConnection() {
         try {
             if(connection == null){
-                connection = DriverManager.getConnection("jdbc:sqlite" + rutaArchivoBD);
+                connection = DriverManager.getConnection("jdbc:sqlite:" + rutaArchivoBD);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,7 +58,7 @@ public abstract class Conexion {
      */
     public Connection conectar() throws SQLException{
         if (connection == null || connection.isClosed()){
-            connection = DriverManager.getConnection("jdbc:sqlite" + rutaArchivoBD);
+            connection = DriverManager.getConnection("jdbc:sqlite:" + rutaArchivoBD);
         }
         return connection;
     }
