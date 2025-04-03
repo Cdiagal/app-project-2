@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane fx:id="anchorPaneInit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" style="-fx-background-color: 000000; -fx-border-color: #08476F; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.init.InitAppController">
+<AnchorPane fx:id="anchorPaneInit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" styleClass="anchorPaneInit" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.init.InitAppController">
    <children>
       <!--AnchorPane Front-->
       <AnchorPane fx:id="anchorPaneInitFront" layoutX="111.0" layoutY="297.0" opacity="0.54" prefHeight="234.0" prefWidth="302.0" styleClass="anchorPaneInitFront" stylesheets="@../../../../css/styles.css" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="102.0">

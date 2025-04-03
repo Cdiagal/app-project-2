@@ -4,8 +4,9 @@
 /*boton de login*/
 .loginButton{
     -fx-text-align: center;
+    -fx-font-color: rgb(0, 0, 0);
     -fx-font-size: 16px;
-    -fx-font-weight: 300;
+    -fx-font-weight: 900;
     -fx-border-color: #000000;
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
@@ -58,8 +59,9 @@
     -fx-cursor: hand;
 }
 
-/*anchorPane init front*/
+/*anchor pane init front*/
 
+/*boton de registro*/
 .anchorPaneInitFront{
     -fx-text-align: center;
     -fx-font-size: 16px;
@@ -71,15 +73,19 @@
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
+    
+}
+
+.loginTextLabel{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
 }
 
-/*Logo Taskyourself*/
-
-.taskYourselfLogo{
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+.anchorPaneInit{
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #08476F 33%, #87c2f3b6 66%, #08476F 100%);
+    -fx-border-radius: 20px;
+    -fx-border-width: 5px;
+    -fx-background-radius: 20px;
+    -fx-background-color: 00000;
 }
-
-
 
 
