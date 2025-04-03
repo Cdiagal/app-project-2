@@ -11,7 +11,7 @@
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: rgb(245, 243, 236);
+    -fx-background-color: rgb(255, 255, 255);
     -fx-border-width: 2px;
     -fx-alignment: center;
     -fx-content-display: center;
@@ -44,24 +44,21 @@
 
 /*boton de registro*/
 .registerButton{
-    -fx-text-align: center;
+    -fx-text-fill:#000000;
     -fx-font-size: 16px;
-    -fx-font-weight: 300;
+    -fx-font-weight: 900;
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: rgb(245, 243, 236);
+    -fx-background-color: rgb(255, 255, 255);
     -fx-border-width: 2px;
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
-    -fx-text-alignment: center;
     -fx-cursor: hand;
 }
 
 /*anchor pane init front*/
-
-/*boton de registro*/
 .anchorPaneInitFront{
     -fx-text-align: center;
     -fx-font-size: 16px;
@@ -73,19 +70,20 @@
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 2);
     
 }
 
 .loginTextLabel{
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -fx-effect: dropshadow(gaussian, rgb(255, 255, 255),4,0,0,2);
 }
 
 .anchorPaneInit{
     -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #08476F 33%, #87c2f3b6 66%, #08476F 100%);
-    -fx-border-radius: 20px;
+    -fx-border-radius: 10px;
     -fx-border-width: 5px;
-    -fx-background-radius: 20px;
-    -fx-background-color: 00000;
+    -fx-background-radius: 10px;
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #e4f1f7 15%, #fffffdee 30%);
 }
 
 
