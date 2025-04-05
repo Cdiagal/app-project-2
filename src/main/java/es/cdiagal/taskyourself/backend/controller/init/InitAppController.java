@@ -3,10 +3,12 @@ package es.cdiagal.taskyourself.backend.controller.init;
 
 import com.jfoenix.controls.JFXButton;
 
+import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
 import es.cdiagal.taskyourself.initApp.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -17,13 +19,20 @@ import javafx.stage.Stage;
  * @version 1.0.0
  */
 
-public class InitAppController {
+public class InitAppController  extends AbstractController{
     
+
     @FXML
     protected AnchorPane anchorPane;
 
     @FXML
+    protected Label loginLabel;
+
+    @FXML
     protected JFXButton loginButton;
+
+    @FXML
+    protected Label registroLabel;
 
     @FXML
     protected JFXButton registerButton;
@@ -69,6 +78,27 @@ public class InitAppController {
         } catch (Exception e) {
             System.out.println("Error al cargar la página Configuración.");
             e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    public void initialize(){
+        onClicChangeLanguage();
+    }
+
+    @FXML
+    public void onClicChangeLanguage(){
+        String idioma = AbstractController.getIdiomaActual();
+
+        if (getPropertiesIdioma() == null){
+            setPropertiesIdioma(loadIdioma("lan", idioma));
+        }
+        if (getPropertiesIdioma() != null){
+            loginLabel.setText(getPropertiesIdioma().getProperty("loginLabel"));
+            loginButton.setText(getPropertiesIdioma().getProperty("loginButton"));
+            registroLabel.setText(getPropertiesIdioma().getProperty("registroLabel"));
+            registerButton.setText(getPropertiesIdioma().getProperty("registerButton"));
         }
     }
 }

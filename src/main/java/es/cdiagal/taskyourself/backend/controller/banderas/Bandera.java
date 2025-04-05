@@ -2,11 +2,11 @@ package es.cdiagal.taskyourself.backend.controller.banderas;
 
 import javafx.scene.image.Image;
 
-public class Banderas {
+public class Bandera {
     private final String nombre;
     private final Image icono;
 
-    public Banderas(String nombre, Image icono){
+    public Bandera(String nombre, Image icono){
         this.nombre = nombre;
         this.icono = icono;
     }
@@ -21,7 +21,7 @@ public class Banderas {
 
     @Override
     public String toString() {
-        return nombre;
+        return "";
     }
 }
 

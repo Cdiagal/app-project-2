@@ -2,7 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXToggleButton?>
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -15,7 +17,7 @@
 
 <!---->
 
-<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.herramientas.SeController">
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController">
    <children>
       <JFXButton fx:id="backButton" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" onAction="#onClickBackButton" prefHeight="38.0" prefWidth="38.0" text=" " textAlignment="CENTER">
          <graphic>
@@ -30,16 +32,25 @@
          <children>
             <Pane prefHeight="60.0" prefWidth="384.0">
                <children>
-                  <JFXButton fx:id="languageButton" layoutX="279.0" layoutY="11.0" onAction="#onClicChangeLanguage" prefHeight="39.0" prefWidth="57.0" text=" ">
-                     <graphic>
-                        <ImageView fx:id="nextImage" fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../imagesFxml/icons8-adelante-30.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <Label fx:id="languageLabel" layoutX="20.0" layoutY="18.0" prefHeight="21.0" prefWidth="63.0" text="Idioma">
+                  <Label fx:id="languageLabel" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="188.0" text="Idioma">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="languageComboBox" layoutX="291.0" layoutY="16.0" onAction="#onClicChangeLanguage" stylesheets="@../../../../css/styles.css">
+                     <styleClass>
+                        <String fx:value="arrow-button" />
+                        <String fx:value="list-cell" />
+                        <String fx:value="languageComboBox" />
+                     </styleClass>
+                  </ComboBox>
+               </children>
+            </Pane>
+            <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
+            <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXToggleButton fx:id="darkButton" layoutX="276.0" layoutY="1.0" onAction="#onClicDarkFlip" prefHeight="58.0" prefWidth="57.0" text=" " toggleColor="WHITE" toggleLineColor="#3189d7" />
+                  <Label fx:id="darkModeLabel" layoutX="14.0" layoutY="22.0" prefHeight="25.0" prefWidth="213.0" text="Modo oscuro">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -47,17 +58,16 @@
                </children>
             </Pane>
             <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
-            <JFXToggleButton fx:id="darkButton" contentDisplay="RIGHT" onAction="#onClicDarkFlip" prefHeight="60.0" prefWidth="384.0" text="Modo oscuro                                    " toggleColor="WHITE" toggleLineColor="#2b89e8" unToggleColor="#f8f5f5">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXToggleButton>
-            <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
-            <JFXToggleButton fx:id="notiButton" contentDisplay="RIGHT" onAction="#onClicNoti" prefHeight="60.0" prefWidth="384.0" text="Notificaciones                                   " toggleColor="WHITE" toggleLineColor="#2b89e8">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXToggleButton>
+            <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXToggleButton fx:id="notiToggleButton" layoutX="276.0" layoutY="1.0" onAction="#onClicNoti" prefHeight="58.0" prefWidth="56.0" text=" " toggleColor="WHITE" toggleLineColor="#3189d7" />
+                  <Label fx:id="notiLabel" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="213.0" text="Notificaciones">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
             <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
             <Pane prefHeight="60.0" prefWidth="384.0">
                <children>
@@ -70,7 +80,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <Label fx:id="fontSizeLabel" layoutX="14.0" layoutY="16.0" prefHeight="17.0" prefWidth="151.0" text="Tamaño de letra">
+                  <Label fx:id="fontSizeLabel" layoutX="14.0" layoutY="16.0" prefHeight="25.0" prefWidth="231.0" text="Tamaño de letra">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -80,12 +90,12 @@
             <Separator fx:id="separatorSettings" prefHeight="7.0" prefWidth="350.0" />
             <Pane prefHeight="60.0" prefWidth="384.0">
                <children>
-                  <Label fx:id="infoAppLabel" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="250.0" text="Información sobre TaskYourself">
+                  <Label fx:id="infoAppLabel" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="273.0" text="Información sobre TaskYourself">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="infoAppButton" layoutX="279.0" layoutY="10.0" onAction="#onClicInfoApp" text=" ">
+                  <JFXButton fx:id="infoAppButton" layoutX="285.0" layoutY="10.0" onAction="#onClicInfoApp" text=" ">
                      <graphic>
                         <ImageView fx:id="infoAppLogo" fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>

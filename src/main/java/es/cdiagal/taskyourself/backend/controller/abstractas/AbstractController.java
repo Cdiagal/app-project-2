@@ -53,7 +53,7 @@ public abstract class AbstractController {
      * Getters y setters para los idiomas.
      * @param properties
      */
-    public void setpropertiesIdioma(Properties properties) {
+    public void setPropertiesIdioma(Properties properties) {
         propertiesIdioma = properties;
     }
 
@@ -74,7 +74,7 @@ public abstract class AbstractController {
             return properties;
         }
         
-        String path = "src/main/resources/" + nombreFichero+"-"+idioma+".properties";
+        String path = "src/main/resources/" + nombreFichero + "-" + idioma + ".properties";
 
         File file = new File(path);
 

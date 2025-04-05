@@ -91,6 +91,42 @@
 
 /*SETTINGS*/
 
+.languageComboBox .combo-box-base {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+}
+
+.languageComboBox .arrow-button {
+    -fx-background-color: transparent;
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+}
+
+.languageComboBox .arrow-button .arrow {
+    -fx-shape: "";
+}
+
+.languageComboBox {
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-background-color: transparent; /* o transparente si prefieres */
+    -fx-border-color: gray;
+    -fx-border-width: 1;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-padding: 0;
+}
+
+.languageComboBox .list-cell {
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent; 
+}
+
 
 .hBoxIcons{
     -fx-border-color: #000000 transparent transparent transparent;
