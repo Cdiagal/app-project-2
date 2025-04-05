@@ -3,8 +3,12 @@ package es.cdiagal.taskyourself.backend.controller.init;
 
 import com.jfoenix.controls.JFXButton;
 
+import es.cdiagal.taskyourself.initApp.MainApplication;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * Clase que controla todas las funciones que tiene el inicio de la app.
@@ -55,6 +59,16 @@ public class InitAppController {
 
     @FXML
     public void onClicOpenSettings(){
-
+        try {
+        Stage stage = (Stage) settingsButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 451,600);
+        stage.setTitle("Configuración");
+        stage.setScene(scene);
+        stage.show();
+        } catch (Exception e) {
+            System.out.println("Error al cargar la página Configuración.");
+            e.printStackTrace();
+        }
     }
 }

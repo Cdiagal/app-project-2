@@ -87,3 +87,33 @@
 }
 
 
+
+
+/*SETTINGS*/
+
+
+.hBoxIcons{
+    -fx-border-color: #000000 transparent transparent transparent;
+    -fx-border-width: 2;
+}
+
+.homeButton{
+
+}
+
+.calendarButton{
+
+}
+
+.notiButton{
+
+}
+
+.taskButton{
+
+}
+
+.profileButton{
+
+}
+

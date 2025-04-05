@@ -1,11 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0"
-    xmlns="http://javafx.com/javafx/21"
-    xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController">
-    <children>
+<!---->
 
-    </children>
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.herramientas.SeController">
+   <children>
+      <JFXButton fx:id="backButton" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" onAction="#onClickBackButton" prefHeight="38.0" prefWidth="38.0" text=" " textAlignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../../../../imagesFxml/icons8-adelante-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <VBox layoutX="51.0" layoutY="121.0" prefHeight="321.0" prefWidth="350.0">
+         <children>
+            <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXButton fx:id="languageButton" layoutX="279.0" layoutY="11.0" onAction="#onClicChangeLanguage" prefHeight="39.0" prefWidth="57.0" text=" ">
+                     <graphic>
+                        <ImageView fx:id="nextImage" fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-adelante-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="languageLabel" layoutX="20.0" layoutY="18.0" prefHeight="21.0" prefWidth="63.0" text="Idioma">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
+            <JFXToggleButton fx:id="darkButton" contentDisplay="RIGHT" onAction="#onClicDarkFlip" prefHeight="60.0" prefWidth="384.0" text="Modo oscuro                                    " toggleColor="WHITE" toggleLineColor="#2b89e8" unToggleColor="#f8f5f5">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXToggleButton>
+            <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
+            <JFXToggleButton fx:id="notiButton" contentDisplay="RIGHT" onAction="#onClicNoti" prefHeight="60.0" prefWidth="384.0" text="Notificaciones                                   " toggleColor="WHITE" toggleLineColor="#2b89e8">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXToggleButton>
+            <Separator fx:id="separatorSettings" prefHeight="4.0" prefWidth="330.0" />
+            <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXButton fx:id="fontSizeButton" layoutX="287.0" layoutY="9.0" onAction="#onClicChangeFontSize" prefHeight="39.0" prefWidth="57.0" text=" ">
+                     <graphic>
+                        <ImageView fx:id="nextImage1" fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-adelante-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="fontSizeLabel" layoutX="14.0" layoutY="16.0" prefHeight="17.0" prefWidth="151.0" text="Tamaño de letra">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator fx:id="separatorSettings" prefHeight="7.0" prefWidth="350.0" />
+            <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <Label fx:id="infoAppLabel" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="250.0" text="Información sobre TaskYourself">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="infoAppButton" layoutX="279.0" layoutY="10.0" onAction="#onClicInfoApp" text=" ">
+                     <graphic>
+                        <ImageView fx:id="infoAppLogo" fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-información-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Separator fx:id="separatorSettings" prefHeight="7.0" prefWidth="350.0" />
+         </children>
+      </VBox>
+      <HBox fx:id="hBoxIcons" alignment="CENTER" layoutY="531.0" pickOnBounds="false" prefHeight="69.0" prefWidth="451.0" styleClass="hBoxIcons" stylesheets="@../../../../css/styles.css">
+         <children>
+            <Pane prefHeight="65.0" prefWidth="72.0">
+               <children>
+                  <JFXButton fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-20.0" layoutY="4.0" onAction="#onClicHome" prefHeight="57.0" prefWidth="53.0" text=" ">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fx:id="homeImagemage" fitHeight="59.0" fitWidth="53.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-página-principal-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="65.0" prefWidth="75.0">
+               <children>
+                  <JFXButton fx:id="calendarButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-19.0" layoutY="6.0" onAction="#onClicCalendar" prefHeight="59.0" prefWidth="53.0" text=" ">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="53.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-calendar-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="65.0" prefWidth="75.0">
+               <children>
+                  <JFXButton fx:id="notiButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-19.0" layoutY="3.0" onAction="#onClicNotiList" prefHeight="59.0" prefWidth="53.0" text=" ">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="53.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-mensaje-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="65.0" prefWidth="75.0">
+               <children>
+                  <JFXButton fx:id="taskButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-19.0" layoutY="6.0" onAction="#onClicTaskList" prefHeight="17.0" prefWidth="53.0" text=" ">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="53.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-tarea-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="65.0" prefWidth="75.0">
+               <children>
+                  <JFXButton fx:id="profileButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-19.0" layoutY="6.0" onAction="#onClicProfileButton" prefWidth="53.0" text=" ">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/icons8-usuario-de-género-neutro-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Pane>
+         </children>
+      </HBox>
+      <JFXButton fx:id="settingsButton" alignment="CENTER" layoutX="349.0" layoutY="58.0" onAction="#onClicSettings" text=" ">
+         <graphic>
+            <ImageView fx:id="imageSettings" fitHeight="47.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../imagesFxml/configIconBlue.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
 </AnchorPane>
