@@ -50,7 +50,17 @@ public class InitAppController  extends AbstractController{
 
     @FXML
     public void onClicOpenLogin(){
-
+        try {
+        Stage stage = (Stage) settingsButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 451,600);
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.show();
+        } catch (Exception e) {
+            System.out.println("Error al cargar la página Configuración.");
+            e.printStackTrace();
+        }
     }
 
     /**
