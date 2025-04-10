@@ -89,7 +89,7 @@ private String rutaDB;
         try {
             conectar();
             PreparedStatement preparedStatement = getConnection().prepareStatement(
-                        "INSERT INTO usuario (id, nombre, contrasenia, email) values (?,?,?,?)");
+                            "INSERT INTO usuario (id, nombre, contrasenia, email) values (?,?,?,?)");
             preparedStatement.setString(1, newUser.getId());
             preparedStatement.setString(2, newUser.getNombre());
             preparedStatement.setString(3, newUser.getPassword());
@@ -148,6 +148,4 @@ private String rutaDB;
             cerrar();
         }
     }
-
-
 }
