@@ -15,6 +15,7 @@ TaskYourself es una aplicación intuitiva y eficiente diseñada para ayudar a lo
 ---
 ## **Tecnologías usadas para el desarrollo:**
 
+<p>
 <img src=images/java-logo.png width=40px heigh=70px> <img src=images/javaFx-logo.png width=100px heigh=50px> <img src=images/logotipo-css.png width=80px heigh=50px> <img src=images/apache-Maven-logo.png width=80px heigh=50px> <img src=images/SceneBuilder-Logo.png width=60px heigh=50px> <img src=images/sqlite-Logo.jpeg width=60px heigh=50px> <img src=images/git-Logo.png width=60px heigh=50px> <img src=images/drawio-Logo.png width=60px heigh=50px>
 
 ---
