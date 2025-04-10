@@ -38,12 +38,10 @@ TaskYourself es una aplicación intuitiva y eficiente diseñada para ayudar a lo
 
 ```
 git clone https://github.com/tu-usuario/taskyourself.git
-
 ```
 2. Acceder al directorio del proyecto a través de consola.
 ```
 cd taskyourself
-
 ```
 3. Ejecutar la aplicación con ``Maven``
 ```
