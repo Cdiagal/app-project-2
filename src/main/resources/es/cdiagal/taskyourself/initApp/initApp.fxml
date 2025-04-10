@@ -22,7 +22,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <!--Login button-->
+            <!--LoginButton-->
             <JFXButton fx:id="loginButton" layoutX="45.0" layoutY="59.0" onAction="#onClicOpenLogin" prefHeight="35.0" prefWidth="138.0" styleClass="loginButton" stylesheets="@../../../../css/styles.css" text="Iniciar sesión" />
             <!--RegistroLabel-->
             <Label fx:id="registroLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="137.0" text="Registro" textAlignment="CENTER">

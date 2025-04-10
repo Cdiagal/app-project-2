@@ -1,5 +1,6 @@
 /*fichero que gestiona las formas y texturas de los elementos del fxml*/
 
+/* INIT */
 
 /*boton de login*/
 .loginButton{
@@ -134,22 +135,27 @@
 }
 
 .homeButton{
-
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
 }
 
 .calendarButton{
-
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
 }
 
 .notiButton{
-
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
 }
 
 .taskButton{
-
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
 }
 
 .profileButton{
-
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
 }
 

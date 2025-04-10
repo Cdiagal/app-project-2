@@ -1,13 +1,10 @@
 package es.cdiagal.taskyourself.backend.model.utils.Service;
 
-import java.security.interfaces.RSAKey;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
 import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
 import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 public class UsuarioServiceModel extends Conexion{
@@ -49,8 +46,7 @@ public List<UsuarioModel> loadUser(String sql){
         e.printStackTrace();
     } finally {
         cerrar();
-    }
-    return usuarios;
+    }   return usuarios;
 }
 
 /**
@@ -69,7 +65,7 @@ public List<UsuarioModel> loadAllUsers(){
  */
 public UsuarioModel loadUserbyEmail (String email){
     try {
-        String sql = "SELECT * FROM Usuario " + "where email='"+email+"'";
+        String sql = "SELECT * FROM Usuario " + "where email='"+ email + "'";
     List<UsuarioModel> usuarios = loadUser(sql);
     if (usuarios.isEmpty()) {
         return null;

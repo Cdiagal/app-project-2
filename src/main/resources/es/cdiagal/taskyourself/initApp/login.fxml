@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
+<!---->
 
-<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.login.LoginController">
+    <children>
+        <JFXButton fx:id="backButton" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" onAction="#onClickBackButton" prefHeight="38.0" prefWidth="38.0" text=" " textAlignment="CENTER">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                    <image>
+                        <Image url="@../../../../imagesFxml/icons8-adelante-30.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <VBox layoutX="51.0" layoutY="121.0" prefHeight="321.0" prefWidth="350.0">
+            <children>
+                <Pane prefHeight="60.0" prefWidth="384.0" />
+                <Pane prefHeight="60.0" prefWidth="384.0" />
+                <Pane prefHeight="60.0" prefWidth="384.0" />
+                <Pane prefHeight="60.0" prefWidth="384.0" />
+                <Pane prefHeight="60.0" prefWidth="384.0" />
+            </children>
+        </VBox>
+        <HBox fx:id="hBoxIcons" layoutY="531.0" pickOnBounds="false" prefHeight="69.0" prefWidth="451.0" styleClass="hBoxIcons" stylesheets="@../../../../css/styles.css">
+         <children>
+                <Pane prefHeight="65.0" prefWidth="72.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+               <children>
+                        <JFXButton fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="4.0" onAction="#onClicHome" prefHeight="57.0" prefWidth="53.0" text=" ">
+                            <padding>
+                                <Insets left="30.0" right="30.0" />
+                            </padding>
+                            <graphic>
+                                <ImageView fx:id="homeImagemage" fitHeight="59.0" fitWidth="53.0" layoutX="60.0" layoutY="6.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../imagesFxml/icons8-página-principal-64.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+               </children>
+                </Pane>
+         </children>
+        </HBox>
+        <JFXButton fx:id="settingsButton" alignment="CENTER" layoutX="359.0" layoutY="20.0" onAction="#onClicSettings" text=" ">
+            <graphic>
+                <ImageView fx:id="imageSettings" fitHeight="47.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../imagesFxml/configIcon.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>
