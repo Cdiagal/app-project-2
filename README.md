@@ -1,8 +1,10 @@
 <div align="justify">
 <p align="center">
   <img src="images/LogoTaskYourself.png" width="300" height="300"><br>
-  <em>Manage your time, conquer your goals!</em>
+  <strong>Manage your time, conquer your goals!</strong>
 </p>
+
+
 
 
 
