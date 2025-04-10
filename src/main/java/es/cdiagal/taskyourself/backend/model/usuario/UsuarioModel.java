@@ -124,6 +124,6 @@ public class UsuarioModel {
     public int hashCode() {
         return Objects.hash(id, nombre, email, password, tareasPendientes, tareasCompletadas);
     }
-   
+
 
 }
