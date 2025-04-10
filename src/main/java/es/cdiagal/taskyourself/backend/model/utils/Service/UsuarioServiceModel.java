@@ -109,14 +109,14 @@ public boolean addUser (UsuarioModel newUser){
  * @return usuario actualizado.
  */
 public boolean updateUser(UsuarioModel usuario) {
-    String sql = "UPDATE usuario SET nombre = ?, contrasenia = ? WHERE email = ?";
+    String sql = "UPDATE usuario SET nombre = ?, contrasenia = ?, WHERE email = ?";
     try {
         conectar();
-        PreparedStatement stmt = getConnection().prepareStatement(sql);
-        stmt.setString(1, usuario.getNombre());
-        stmt.setString(2, usuario.getPassword());
-        stmt.setString(3, usuario.getEmail());
-        int filas = stmt.executeUpdate();
+        PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        preparedStatement.setString(1, usuario.getNombre());
+        preparedStatement.setString(2, usuario.getPassword());
+        preparedStatement.setString(3, usuario.getEmail());
+        int filas = preparedStatement.executeUpdate();
         return filas > 0;
     } catch (Exception e) {
         e.printStackTrace();
@@ -136,9 +136,9 @@ public boolean deleteUser(String email) {
     String sql = "DELETE FROM usuario WHERE email = ?";
     try {
         conectar();
-        PreparedStatement stmt = getConnection().prepareStatement(sql);
-        stmt.setString(1, email);
-        int filas = stmt.executeUpdate();
+        PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        preparedStatement.setString(1, email);
+        int filas = preparedStatement.executeUpdate();
         return filas > 0;
     } catch (Exception e) {
         e.printStackTrace();
