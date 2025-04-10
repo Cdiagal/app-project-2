@@ -113,23 +113,23 @@ public class SettingsController extends AbstractController {
      * Metodo que crea las celdas del ComboBox con imagenes.
      */
     private ListCell<Bandera> crearCeldasIdioma() {
-    return new ListCell<>() {
-        private final ImageView imageView = new ImageView();
-    
-        @Override
-        protected void updateItem(Bandera item, boolean empty) {
-            super.updateItem(item, empty);
-            if (empty || item == null) {
-                setGraphic(null);
-            } else {
-                imageView.setImage(item.getIcono());
-                imageView.setFitWidth(30);
-                imageView.setFitHeight(30);
-                setGraphic(imageView);
+        return new ListCell<>() {
+            private final ImageView imageView = new ImageView();
+        
+            @Override
+            protected void updateItem(Bandera item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setGraphic(null);
+                } else {
+                    imageView.setImage(item.getIcono());
+                    imageView.setFitWidth(30);
+                    imageView.setFitHeight(30);
+                    setGraphic(imageView);
+                }
             }
-        }
-    };
-}
+        };
+    }
 
     @FXML
     public void onClicChangeLanguage() {

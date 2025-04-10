@@ -7,6 +7,7 @@ import java.util.List;
 
 import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
 import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
+
 public class UsuarioServiceModel extends Conexion{
 
 
