@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.mfxcore.controls.Label?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,24 +15,50 @@
 
 <!---->
 
-<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.login.LoginController">
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.login.LoginController">
     <children>
-        <JFXButton fx:id="backButton" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" onAction="#onClickBackButton" prefHeight="38.0" prefWidth="38.0" text=" " textAlignment="CENTER">
-            <graphic>
-                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-                    <image>
-                        <Image url="@../../../../imagesFxml/icons8-adelante-30.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </JFXButton>
-        <VBox layoutX="51.0" layoutY="121.0" prefHeight="321.0" prefWidth="350.0">
+        <VBox alignment="BOTTOM_CENTER" layoutX="51.0" layoutY="23.0" prefHeight="503.0" prefWidth="350.0">
             <children>
-                <Pane prefHeight="60.0" prefWidth="384.0" />
-                <Pane prefHeight="60.0" prefWidth="384.0" />
-                <Pane prefHeight="60.0" prefWidth="384.0" />
-                <Pane prefHeight="60.0" prefWidth="384.0" />
-                <Pane prefHeight="60.0" prefWidth="384.0" />
+            <Pane prefHeight="68.0" prefWidth="350.0">
+               <children>
+                  <Label fx:id="emailLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="46.0" prefHeight="16.0" prefWidth="123.0" text="EMAIL" />
+               </children>
+            </Pane>
+            <Pane prefHeight="31.0" prefWidth="350.0">
+               <children>
+                  <MFXTextField fx:id="emailTextField" alignment="CENTER" layoutX="59.0" layoutY="2.0" maxHeight="25.0" minHeight="25.0" prefHeight="50.0" prefWidth="232.0" promptText="Introduzca el correo" />
+               </children>
+            </Pane>
+            <Pane prefHeight="34.0" prefWidth="350.0" />
+                <Pane prefHeight="60.0" prefWidth="350.0">
+               <children>
+                  <MFXPasswordField fx:id="passwordField" alignment="CENTER" layoutX="59.0" layoutY="30.0" minHeight="25.0" prefHeight="25.0" prefWidth="232.0" promptText="        Introduzca la contraseña" />
+                  <Label fx:id="passwordLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="116.0" layoutY="-7.0" prefHeight="16.0" prefWidth="123.0" text="CONTRASEÑA" />
+               </children>
+            </Pane>
+                <Pane prefHeight="29.0" prefWidth="350.0">
+               <children>
+                  <Hyperlink fx:id="passwordLink" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="3.0" prefHeight="22.0" prefWidth="197.0" text="Hyperlink" />
+               </children>
+            </Pane>
+                <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXButton fx:id="loginButton" layoutX="144.0" layoutY="18.0" onAction="#onClicLogin" />
+               </children></Pane>
+                <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXButton fx:id="googleLoginButton" layoutX="144.0" layoutY="18.0" onAction="#onClicGoogle" />
+               </children>
+            </Pane>
+                <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXButton fx:id="appleLoginButton" layoutX="144.0" layoutY="18.0" onAction="#onClicApple" />
+               </children></Pane>
+            <Pane prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <JFXButton fx:id="facebookLoginButton" layoutX="144.0" layoutY="18.0" onAction="#onClicFacebook" />
+               </children>
+            </Pane>
             </children>
         </VBox>
         <HBox fx:id="hBoxIcons" layoutY="531.0" pickOnBounds="false" prefHeight="69.0" prefWidth="451.0" styleClass="hBoxIcons" stylesheets="@../../../../css/styles.css">
@@ -63,5 +93,14 @@
                 </ImageView>
             </graphic>
         </JFXButton>
+      <Pane fx:id="loginUserIconPane" layoutX="32.0" layoutY="35.0" prefHeight="79.0" prefWidth="79.0" styleClass="loginUserIconPane" stylesheets="@../../../../css/styles.css">
+         <children>
+            <ImageView fx:id="loginIconPane" fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../imagesFxml/icons8-usuario-hombre-verificado-96.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
     </children>
 </AnchorPane>
