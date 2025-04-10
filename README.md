@@ -1,8 +1,9 @@
 <div align="justify">
-
 <p align="center">
-<img src= images/LogoTaskYourself.png width=200 heigh=200 >
+<img src= images/LogoTaskYourself.png width=300 heigh=300>
+<p align="center"> Manage your time, conquer your goals!
 </p>
+
 
 
 # App-proyect "TaskYourself"
@@ -16,7 +17,7 @@ TaskYourself es una aplicación intuitiva y eficiente diseñada para ayudar a lo
 ## **Tecnologías usadas para el desarrollo:**
 
 <p>
-<img src=images/java-logo.png width=40px heigh=70px> <img src=images/javaFx-logo.png width=100px heigh=50px> <img src=images/logotipo-css.png width=80px heigh=50px> <img src=images/apache-Maven-logo.png width=80px heigh=50px> <img src=images/SceneBuilder-Logo.png width=60px heigh=50px> <img src=images/sqlite-Logo.jpeg width=60px heigh=50px> <img src=images/git-Logo.png width=60px heigh=50px> <img src=images/drawio-Logo.png width=60px heigh=50px>
+<img src=images/java-logo.png width=40px heigh=70px> <img src=images/javaFx-logo.png width=100px heigh=50px> <img src=images/logotipo-css.png width=80px heigh=50px> <img src=images/apache-Maven-logo.png width=80px heigh=50px> <img src=images/SceneBuilder-Logo.png width=60px heigh=50px> <img src=images/sqlite-logo.jpeg width=60px heigh=50px> <img src=images/git-logo.png width=60px heigh=50px> <img src=images/drawio-logo.png width=60px heigh=50px>
 
 ---
 
