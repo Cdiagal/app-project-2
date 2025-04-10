@@ -4,7 +4,7 @@
 # App-proyect "TaskYourself"
 
 
-<img src=images/java-logo.png width=50px heigh=70px> <img src=images/javaFx-logo.png width=100px heigh=50px> <img src=images/logotipo-css.png width=100px heigh=50px> <img src=images/apache-Maven-logo.png width=100px heigh=50px> <img src=images/SceneBuilder-Logo.png width=100px heigh=50px>
+<img src=images/java-logo.png width=50px heigh=70px> <img src=images/javaFx-logo.png width=150px heigh=50px> <img src=images/logotipo-css.png width=100px heigh=50px> <img src=images/apache-Maven-logo.png width=100px heigh=50px> <img src=images/SceneBuilder-Logo.png width=80px heigh=50px>
 
 ## **Descrición**
 
