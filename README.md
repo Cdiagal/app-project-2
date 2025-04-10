@@ -1,6 +1,6 @@
 <div align="justify">
 <p align="center">
-  <img src="images/LogoTaskYourself.png" width="300" height="300"><br>
+  <img src="images/LogoTaskYourself.png" width="400" height="400"><br>
   <strong>Manage your time, conquer your goals!</strong>
 </p>
 
