@@ -12,16 +12,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <!---->
 
-<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.login.LoginController">
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.login.LoginController">
     <children>
         <VBox alignment="BOTTOM_CENTER" layoutX="51.0" layoutY="23.0" prefHeight="503.0" prefWidth="350.0">
             <children>
             <Pane prefHeight="68.0" prefWidth="350.0">
                <children>
-                  <Label fx:id="emailLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="46.0" prefHeight="16.0" prefWidth="123.0" text="EMAIL" />
+                  <Label fx:id="emailLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="46.0" prefHeight="16.0" prefWidth="123.0" text="Email">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
                </children>
             </Pane>
             <Pane prefHeight="31.0" prefWidth="350.0">
@@ -33,7 +37,10 @@
                 <Pane prefHeight="60.0" prefWidth="350.0">
                <children>
                   <MFXPasswordField fx:id="passwordField" alignment="CENTER" layoutX="59.0" layoutY="30.0" minHeight="25.0" prefHeight="25.0" prefWidth="232.0" promptText="        Introduzca la contraseña" />
-                  <Label fx:id="passwordLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="116.0" layoutY="-7.0" prefHeight="16.0" prefWidth="123.0" text="CONTRASEÑA" />
+                  <Label fx:id="passwordLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="6.0" prefHeight="16.0" prefWidth="123.0" text="Contraseña">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
                </children>
             </Pane>
                 <Pane prefHeight="29.0" prefWidth="350.0">
@@ -97,7 +104,7 @@
          <children>
             <ImageView fx:id="loginIconPane" fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../imagesFxml/icons8-usuario-hombre-verificado-96.png" />
+                  <Image url="@../../../../imagesFxml/usuario-hombre-verificado-96.png" />
                </image>
             </ImageView>
          </children>
