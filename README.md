@@ -9,7 +9,7 @@
 
 <br>
 
-# App-proyect "TaskYourself"
+# App-project "TaskYourself"
 
 
 ## **Descrición**
