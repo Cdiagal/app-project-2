@@ -175,3 +175,39 @@
 /*LOGIN*/
 
 
+.anchorPaneLogin{
+    -fx-border-radius: 10px;
+    -fx-border-width: 5px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #ffffff;
+}
+
+
+.userLoginTextfield{
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #000000;
+}
+
+.userLoginPasswordfield{
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #000000;
+}
+
+.acceptLoginButton{
+    -fx-text-fill:white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #fffffdee 33%, #87c2f3b6 66%, #fffffdee 100%);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #084970;
+    -fx-border-width: 2px;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}

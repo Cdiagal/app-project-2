@@ -4,12 +4,13 @@ import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
 import es.cdiagal.taskyourself.initApp.MainApplication;
-import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -20,38 +21,23 @@ import javafx.stage.Stage;
  */
 
 public class LoginController extends AbstractController{
-    @FXML
-    protected JFXButton settingsButton;
+    @FXML protected JFXButton settingsButton;
     
-    @FXML
-    protected Label emaiLabel;
+    @FXML protected Label loginLabel;
 
-    @FXML
-    protected MFXButton emailTextField;
+    @FXML protected Label emaiLabel;
 
-    @FXML
-    protected Label passwordLabel;
+    @FXML protected TextField userLoginTextfield;
 
-    @FXML
-    protected MFXButton passwordField;
+    @FXML protected Label passwordLabel;
 
-    @FXML
-    protected Hyperlink passwordLink;
+    @FXML protected PasswordField userLoginPasswordfield;
 
-    @FXML
-    protected JFXButton loginButton;
+    @FXML protected Hyperlink recoveryLink;
 
-    @FXML
-    protected JFXButton googleLoginButton;
+    @FXML protected JFXButton acceptLoginButton;
 
-    @FXML
-    protected JFXButton appleLoginButton;
-
-    @FXML
-    protected JFXButton facebookLoginButton;
-
-    @FXML
-    protected JFXButton homeButton;
+    @FXML protected JFXButton homeButton;
 
 
     /**
@@ -60,7 +46,7 @@ public class LoginController extends AbstractController{
     @FXML
     protected void onClicLogin(){
         try {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
+            Stage stage = (Stage) acceptLoginButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("tareaList.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 450, 600);
             stage.setTitle("Tareas");
@@ -72,57 +58,6 @@ public class LoginController extends AbstractController{
     }
 
     
-    /**
-     * Funcion que lleva hacia la pantalla de tareas.
-     */
-    @FXML
-    protected void onClicGoogle(){
-        try {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("tareaList.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
-            stage.setTitle("Tareas");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Funcion que lleva hacia la pantalla de tareas.
-     */
-    @FXML
-    protected void onClicApple(){
-        try {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("tareaList.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
-            stage.setTitle("Tareas");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Funcion que lleva hacia la pantalla de tareas.
-     */
-    @FXML
-    protected void onClicFacebook(){
-        try {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("tareaList.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
-            stage.setTitle("Tareas");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
         /**
      * Funcion que accede a la ventana de Inicio.
      */
@@ -139,4 +74,26 @@ public class LoginController extends AbstractController{
             e.printStackTrace();
         }
     }
+
+        /**
+     * Metodo que gestiona el acceso a la pantalla de settings mediante un boton.
+     */
+
+    @FXML
+    public void onClicOpenSettings(){
+        try {
+        Stage stage = (Stage) settingsButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 451,600);
+        stage.setTitle("Configuración");
+        stage.setScene(scene);
+        stage.show();
+        } catch (Exception e) {
+            System.out.println("Error al cargar la página Configuración.");
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

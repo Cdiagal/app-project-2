@@ -1,6 +1,11 @@
 package es.cdiagal.taskyourself.backend.model.utils.service;
 
 import org.mindrot.jbcrypt.BCrypt;
+/**
+ * Clase que gestiona y crea un código hash para encriptar las contrasenias de los usuarios.
+ * @author cdiagal
+ * @version 1.0.0
+ */
 
 public class HashUtils {
     

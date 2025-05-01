@@ -40,16 +40,6 @@ public abstract class Conexion {
         return this.rutaArchivoBD;
     }
 
-    public Connection getConnection() {
-        try {
-            if(connection == null){
-                connection = DriverManager.getConnection("jdbc:sqlite:" + rutaArchivoBD);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return this.connection;
-    }
 
     /**
      * Metodo que abre la conexion con la bbdd.
