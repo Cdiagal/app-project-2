@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
  * @version 1.0.0
  */
 
-public class UserRegister {
+public class RegisterController {
     
     @FXML
     protected AnchorPane registerAnchorPane;

@@ -2,6 +2,7 @@ package es.cdiagal.taskyourself.backend.controller.login;
 
 import com.jfoenix.controls.JFXButton;
 
+import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
 import es.cdiagal.taskyourself.initApp.MainApplication;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.fxml.FXML;
@@ -18,7 +19,7 @@ import javafx.stage.Stage;
  * @version 1.0.0
  */
 
-public class LoginController {
+public class LoginController extends AbstractController{
     @FXML
     protected JFXButton settingsButton;
     

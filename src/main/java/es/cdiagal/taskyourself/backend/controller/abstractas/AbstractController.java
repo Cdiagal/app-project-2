@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-import es.cdiagal.taskyourself.backend.model.utils.Service.UsuarioServiceModel;
+import es.cdiagal.taskyourself.backend.model.utils.service.UsuarioServiceModel;
 
 /**
  * Clase abstracta que gestiona los idiomas y ficheros de la app.

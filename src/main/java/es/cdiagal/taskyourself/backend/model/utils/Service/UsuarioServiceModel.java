@@ -1,5 +1,6 @@
-package es.cdiagal.taskyourself.backend.model.utils.Service;
+package es.cdiagal.taskyourself.backend.model.utils.service;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -32,8 +33,8 @@ private String rutaDB;
     public List<UsuarioModel> loadUser(String sql){
         List<UsuarioModel> usuarios = new ArrayList<>();
         try {
-            conectar();
-            PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+            Connection conection = conectar();
+            PreparedStatement preparedStatement = conection.prepareStatement(sql);
             ResultSet cursor = preparedStatement.executeQuery();
             while (cursor.next()) {
                 String id = cursor.getString("id");
@@ -47,7 +48,8 @@ private String rutaDB;
             e.printStackTrace();
         } finally {
             cerrar();
-        }   return usuarios;
+        }
+        return usuarios;
     }
 
     /**

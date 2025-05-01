@@ -2,12 +2,4 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="registerAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.registro.RegisterController">
-<children>
-    <JFXButton fx:id="settingsButton" layoutX="450.0" layoutY="30.0" onAction="#onClicOpenSettings" prefHeight="25.0" prefWidth="25.0" styleClass="settingsButton" stylesheets="@../../../../css/styles.css" AnchorPane.bottomAnchor="524.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="30.0">
-        <graphic>
-            <FontIcon iconColor="black" iconLiteral="fas-cog" iconSize="40" />
-        </graphic>
-    </JFXButton>
-</children>
-</AnchorPane>
+<AnchorPane fx:id="registerAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.registro.RegisterController" />
