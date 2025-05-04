@@ -62,7 +62,7 @@ mvn javafx:run
  Diseño final de la pantalla principal.
 
 <p align="center">
-<img src= images/pantalla-principal-final.png width=300>
+<img src= images/Pantalla-principal-final-verde.png width=300>
 
 
 ---

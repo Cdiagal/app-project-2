@@ -3,6 +3,10 @@ package es.cdiagal.taskyourself.backend.controller.usuario;
 import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
+import es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController;
+import es.cdiagal.taskyourself.backend.controller.tarea.TareaListController;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil.Pantallas;
 import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
 import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 import es.cdiagal.taskyourself.backend.model.utils.service.HashUtils;
@@ -12,24 +16,51 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class DeleteUser extends AbstractController {
+public class DeleteUserController extends AbstractController {
     private final UsuarioDAO usuarioDAO;
+    private Pantallas pantallaOrigen;
+    private UsuarioModel usuario;
 
     @FXML private TextField registerEmailTextField;
     @FXML private PasswordField registerPasswordField;
     @FXML private PasswordField registerRepeatPasswordField;
     @FXML private JFXButton deleteButtonn;
     @FXML private JFXButton backButton;
+    @FXML private JFXButton settingsButton;
+    @FXML private JFXButton homeButton;
+    @FXML private JFXButton calendarButton;
+    @FXML private JFXButton notiButton;
+    @FXML private JFXButton taskButton;
+    @FXML private JFXButton profileButton;
 
-    public DeleteUser() {
+
+    public DeleteUserController() {
         super();
         this.usuarioDAO = new UsuarioDAO(getRutaArchivoBD());
     }
+
+    /**
+     * Constructor de la clase TareaListController.
+     * @param usuario UsuarioModel que representa al usuario actual.
+     */
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
+    }
+
+
+    /**
+     * Constructor de la clase TareaListController.
+     * @param pantallaOrigen que representa la pantalla de origen.
+     */
+    public void setPantallaOrigen(Pantallas pantallaOrigen) {
+        this.pantallaOrigen = pantallaOrigen;
+    }
+
+
 
     /**
      * Metodo que inicializa el cambio de idioma en el ComboBox.
@@ -61,8 +92,6 @@ public class DeleteUser extends AbstractController {
         registerPasswordField.setPromptText(getPropertiesLanguage().getProperty("deletePasswordField1PrompText"));
         registerRepeatPasswordField.setPromptText(getPropertiesLanguage().getProperty("deletePasswordfield2PrompText"));
         deleteButtonn.setText(getPropertiesLanguage().getProperty("deleteButton"));
-
-        
         }
     }
 
@@ -109,7 +138,7 @@ public class DeleteUser extends AbstractController {
         ButtonType confirmar = new ButtonType("Continuar");
         boolean eliminado = usuarioDAO.eliminar(usuario.getId());
         if (eliminado) {
-            showAlert(Alert.AlertType.INFORMATION, "Usuario eliminado", "El usuario '" + nick + "' ha sido eliminado correctamente.");
+            showAlert(Alert.AlertType.INFORMATION, "Usuario eliminado", "El usuario con email: '" + email + "' ha sido eliminado correctamente.");
             onClickBackButton();
         } else {
             showAlert(Alert.AlertType.ERROR, "Error al eliminar", "Ha ocurrido un error al intentar eliminar el usuario.");
@@ -124,6 +153,97 @@ public class DeleteUser extends AbstractController {
         volverAPantallaOrigen(backButton, pantallaOrigen);
     }
 
+
+    /**
+     * Funcion que gestiona el acceso a la pantalla de settings mediante un boton.
+     */
+
+    @FXML
+    public void onClicOpenSettings(){
+        try {
+        Stage stage = (Stage) settingsButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        SettingsController controller = fxmlLoader.getController();
+        controller.setUsuario(usuario);
+        controller.setPantallaOrigen(PantallasUtil.Pantallas.ELIMINAR_CUENTA);
+        
+        stage.setTitle("Configuración");
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.show();
+        } catch (Exception e) {
+            System.out.println("Error al cargar la página Configuración.");
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Funcion que accede a la ventana de Inicio.
+     */
+    @FXML
+    protected void onClicHome(){
+        try {
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("initApp.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Login");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Funcion que accede a la ventana de tareas.
+     */
+    @FXML
+    protected void onClicTaskList(){
+        try {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("userTaskList.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            TareaListController controller = fxmlLoader.getController();
+            controller.setUsuario(usuario);
+            controller.setPantallaOrigen(PantallasUtil.Pantallas.ELIMINAR_CUENTA);
+            controller.userInit();
+
+            stage.setTitle("Lista de tareas");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Funcion que accede a la ventana de Calendario.
+     */
+    @FXML
+    protected void onClicCalendar(){
+        try {
+            Stage stage = (Stage) calendarButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("initApp.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            TareaListController controller = fxmlLoader.getController();
+            controller.setUsuario(usuario);
+            controller.setPantallaOrigen(PantallasUtil.Pantallas.ELIMINAR_CUENTA);
+            controller.userInit();
+
+            stage.setTitle("Lista de tareas");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
     /**
      * Funcion que muestra una alerta genérica.

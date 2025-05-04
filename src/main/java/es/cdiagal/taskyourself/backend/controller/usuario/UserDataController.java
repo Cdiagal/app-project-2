@@ -1,8 +1,5 @@
 package es.cdiagal.taskyourself.backend.controller.usuario;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-
 import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
@@ -18,9 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 /**
@@ -45,7 +40,6 @@ public class UserDataController extends AbstractController {
     @FXML private JFXButton notiButton;
     @FXML private JFXButton taskButton;
     @FXML private JFXButton profileButton;
-    @FXML private JFXButton nuevaTareaButton;
     @FXML private JFXButton editProfileButton;
     @FXML private JFXButton logoutButton;
     @FXML private JFXButton helpButton;
@@ -152,7 +146,7 @@ public class UserDataController extends AbstractController {
         try {
         Stage stage = (Stage) settingsButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 451,600);
+        Scene scene = new Scene(fxmlLoader.load());
 
         SettingsController controller = fxmlLoader.getController();
         controller.setUsuario(usuario);
