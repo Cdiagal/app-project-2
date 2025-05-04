@@ -402,7 +402,7 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-border-width: 2px;
-    -fx-alignment: left;
+    -fx-alignment: CENTER_LEFT;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 2, 2);
 }

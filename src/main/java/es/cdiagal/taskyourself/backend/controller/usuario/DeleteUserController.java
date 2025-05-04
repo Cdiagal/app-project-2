@@ -25,9 +25,9 @@ public class DeleteUserController extends AbstractController {
     private Pantallas pantallaOrigen;
     private UsuarioModel usuario;
 
-    @FXML private TextField registerEmailTextField;
-    @FXML private PasswordField registerPasswordField;
-    @FXML private PasswordField registerRepeatPasswordField;
+    @FXML private TextField deleteEmailTextField;
+    @FXML private PasswordField deletePasswordField;
+    @FXML private PasswordField deleteRepeatPasswordField;
     @FXML private JFXButton deleteButtonn;
     @FXML private JFXButton backButton;
     @FXML private JFXButton settingsButton;
@@ -70,7 +70,7 @@ public class DeleteUserController extends AbstractController {
         if(getPropertiesLanguage()==null){
             setPropertiesLanguage(loadLanguage("lan", getIdiomaActual()));
         }
-        registerEmailTextField.requestFocus();
+        deleteEmailTextField.requestFocus();
         changeLanguage();
     }
 
@@ -88,10 +88,10 @@ public class DeleteUserController extends AbstractController {
         if(getPropertiesLanguage() != null){
 
         
-        registerEmailTextField.setPromptText(getPropertiesLanguage().getProperty("nickTextFieldPromptText"));
-        registerPasswordField.setPromptText(getPropertiesLanguage().getProperty("deletePasswordField1PrompText"));
-        registerRepeatPasswordField.setPromptText(getPropertiesLanguage().getProperty("deletePasswordfield2PrompText"));
-        deleteButtonn.setText(getPropertiesLanguage().getProperty("deleteButton"));
+        deleteEmailTextField.setPromptText(getPropertiesLanguage().getProperty("deleteEmailTextFieldPrompText"));
+        deletePasswordField.setPromptText(getPropertiesLanguage().getProperty("deletePasswordFieldPrompText"));
+        deleteRepeatPasswordField.setPromptText(getPropertiesLanguage().getProperty("deleteRepeatPasswordFieldPrompText"));
+        deleteButtonn.setText(getPropertiesLanguage().getProperty("deleteButtonn"));
         }
     }
 
@@ -101,23 +101,23 @@ public class DeleteUserController extends AbstractController {
     private boolean validarDatos() {
 
         // Campos vacios.
-        if (registerEmailTextField.getText().isEmpty() || registerPasswordField.getText().isEmpty() || registerRepeatPasswordField.getText().isEmpty()) {
+        if (deleteEmailTextField.getText().isEmpty() || deletePasswordField.getText().isEmpty() || deleteRepeatPasswordField.getText().isEmpty()) {
             showAlert(Alert.AlertType.WARNING, "Campos incompletos", "Debes rellenar todos los campos.");
             return false;
         }
         // Contrasenias diferentes.
-        if (!registerPasswordField.getText().equals(registerRepeatPasswordField.getText())) {
+        if (!deletePasswordField.getText().equals(deleteRepeatPasswordField.getText())) {
             showAlert(Alert.AlertType.ERROR, "Contraseñas diferentes", "Las contraseñas no coinciden.");
             return false;
         }
         // Usuario inexistente.
-        UsuarioModel usuario = usuarioDAO.buscarPorEmail(registerEmailTextField.getText().trim());
+        UsuarioModel usuario = usuarioDAO.buscarPorEmail(deleteEmailTextField.getText().trim());
         if (usuario == null) {
             showAlert(Alert.AlertType.ERROR, "Usuario no encontrado", "No existe ningún usuario con ese alias.");
             return false;
         }
         // Contrasenias iguales.
-        String password = registerPasswordField.getText();
+        String password = deletePasswordField.getText();
         if (!HashUtils.verificarPassword(password, usuario.getPassword())) {
             showAlert(Alert.AlertType.ERROR, "Contraseña incorrecta", "La contraseña no coincide con la del usuario.");
             return false;
@@ -132,7 +132,7 @@ public class DeleteUserController extends AbstractController {
     protected void onClickDelete() {
         if (!validarDatos()) return;
 
-        String email = registerEmailTextField.getText().trim();
+        String email = deleteEmailTextField.getText().trim();
         UsuarioModel usuario = usuarioDAO.buscarPorEmail(email);
         showAlert(Alert.AlertType.WARNING, "Eliminar usuario", "A continuación se va a eliminar el usuario de forma permanente \n ¿Estás seguro de continuar?");
         ButtonType confirmar = new ButtonType("Continuar");
@@ -238,6 +238,52 @@ public class DeleteUserController extends AbstractController {
             controller.userInit();
 
             stage.setTitle("Lista de tareas");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Funcion que accede a la ventana de Recordatorios.
+     */
+    @FXML
+    protected void onClicNotiList(){
+        try {
+            Stage stage = (Stage) notiButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("initApp.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            TareaListController controller = fxmlLoader.getController();
+            controller.setUsuario(usuario);
+            controller.setPantallaOrigen(PantallasUtil.Pantallas.ELIMINAR_CUENTA);
+            controller.userInit();
+
+            stage.setTitle("Rrecordatorios");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Funcion que accede a la ventana del perfil del usuario.
+     */
+    @FXML
+    protected void onClicProfileButton(){
+        try {
+            Stage stage = (Stage) profileButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("userData.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            UserDataController userDataController = fxmlLoader.getController();
+            userDataController.setUsuario(usuario);
+            userDataController.setPantallaOrigen(PantallasUtil.Pantallas.ELIMINAR_CUENTA);
+            userDataController.usuarioData();
+
+            stage.setTitle("Perfil de usuario");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

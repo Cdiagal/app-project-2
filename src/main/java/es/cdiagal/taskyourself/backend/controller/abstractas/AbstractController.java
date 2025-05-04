@@ -138,7 +138,7 @@ public abstract class AbstractController extends Conexion{
                 case TAREA_EDITAR -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/editTask.fxml"));
                 case AJUSTES -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/settings.fxml"));
                 case PERFIL -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/userData.fxml"));
-                case ELIMINAR_CUENTA -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/deleteAccount.fxml"));
+                case ELIMINAR_CUENTA -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/deleteUser.fxml"));
                 case RECUPERAR_CONTRASENIA -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/recovery.fxml"));
                 case NOTIFICACIONES -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/notifications.fxml"));
                 case USUARIO_EDITAR -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/updateUserData.fxml"));

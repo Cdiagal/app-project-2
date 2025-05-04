@@ -73,8 +73,8 @@ public class UserDataController extends AbstractController {
     public void usuarioData(){
         if (usuario != null) {
 
-            userNameLabel.setText(getPropertiesLanguage().getProperty("userNameLabel") + ", " + usuario.getNombre() + "!");
-            emailUserDataLabel.setText(getPropertiesLanguage().getProperty("emailUserDataLabel") + ": " + usuario.getEmail());
+            userNameLabel.setText(usuario.getNombre());
+            emailUserDataLabel.setText( usuario.getEmail());
 
             //cargarImagenUsuario();
             /**
@@ -241,7 +241,7 @@ public class UserDataController extends AbstractController {
             controller.setPantallaOrigen(PantallasUtil.Pantallas.PERFIL);
             controller.userInit();
 
-            stage.setTitle("Lista de tareas");
+            stage.setTitle("Recordatorios");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -264,7 +264,7 @@ public class UserDataController extends AbstractController {
             userDataController.setPantallaOrigen(PantallasUtil.Pantallas.PERFIL);
             userDataController.usuarioData();
 
-            stage.setTitle("Login");
+            stage.setTitle("Perfil de usuario");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -317,7 +317,7 @@ public class UserDataController extends AbstractController {
     protected void onClickOpenDelete() {
         try {
             Stage stage = (Stage) openDeleteAccountButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("delete.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("deleteUser.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Eliminar usuario");
             stage.setScene(scene);
