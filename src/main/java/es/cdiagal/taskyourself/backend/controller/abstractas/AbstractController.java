@@ -5,7 +5,8 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-import es.cdiagal.taskyourself.backend.model.utils.service.UsuarioServiceModel;
+import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
+import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
 
 /**
  * Clase abstracta que gestiona los idiomas y ficheros de la app.
@@ -13,7 +14,7 @@ import es.cdiagal.taskyourself.backend.model.utils.service.UsuarioServiceModel;
  * @version 1.0.0
  */
 
-public abstract class AbstractController {
+public abstract class AbstractController extends Conexion{
 
     /**
      * Ruta de la base de datos.
@@ -24,7 +25,7 @@ public abstract class AbstractController {
      * Atributos privados de la clase.
      */
 
-    private UsuarioServiceModel usuarioServiceModel;
+    private UsuarioDAO usuarioDAO;
 
     private Properties propertiesIdioma;
     private static String idiomaActual = "español";
@@ -42,8 +43,9 @@ public abstract class AbstractController {
      */
     
     public AbstractController() {
+        super(PATH_DB);
         try {
-            this.usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
+            this.usuarioDAO = new UsuarioDAO(PATH_DB);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,11 +55,11 @@ public abstract class AbstractController {
      * Getters y setters para los idiomas.
      * @param properties
      */
-    public void setPropertiesIdioma(Properties properties) {
+    public void setPropertiesLanguage(Properties properties) {
         propertiesIdioma = properties;
     }
 
-    public Properties getPropertiesIdioma() {
+    public Properties getPropertiesLanguage() {
         return this.propertiesIdioma;
     }
 
@@ -67,7 +69,7 @@ public abstract class AbstractController {
      * @param idioma
      * @return loadIdioma.
      */
-    public Properties loadIdioma(String nombreFichero, String idioma) {
+    public Properties loadLanguage(String nombreFichero, String idioma) {
         Properties properties = new Properties();
         
         if (nombreFichero == null || idioma == null) {
@@ -99,7 +101,7 @@ public abstract class AbstractController {
      * Getter de la clase.
      * @return usuarioServiceModel.
      */
-    public UsuarioServiceModel getUsuarioServiceModel() {
-        return this.usuarioServiceModel;
+    public UsuarioDAO getUsuarioServiceModel() {
+        return this.usuarioDAO;
     }
 }

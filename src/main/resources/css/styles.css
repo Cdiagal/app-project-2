@@ -63,10 +63,10 @@
 .anchorPaneInitFront{
     -fx-text-align: center;
     -fx-font-size: 16px;
-    -fx-border-color: #08476F;
+    -fx-border-color: #003D26;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: #87c2f3b6;
+    -fx-background-color: #94CA9C;
     -fx-border-width: 4px;
     -fx-alignment: center;
     -fx-content-display: center;
@@ -80,11 +80,11 @@
 }
 
 .anchorPaneInit{
-    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #08476F 33%, #87c2f3b6 66%, #08476F 100%);
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #003D26 33%, #beffc9 66%, #003D26 100%);
     -fx-border-radius: 10px;
     -fx-border-width: 5px;
     -fx-background-radius: 10px;
-    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #e4f1f7 15%, #fffffdee 30%);
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #ebfdee 15%, #fffffdee 30%);
 }
 
 
@@ -125,7 +125,7 @@
     -fx-alignment: center;
     -fx-padding: 0;
     -fx-background-color: transparent;
-    -fx-text-fill: transparent; 
+    -fx-text-fill: transparent;
 }
 
 
@@ -201,13 +201,208 @@
     -fx-text-fill:white;
     -fx-font-size: 16px;
     -fx-font-weight: 900;
-    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #fffffdee 33%, #87c2f3b6 66%, #fffffdee 100%);
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #fffffdee 33%, #93CA9C 66%, #fffffdee 100%);
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    -fx-background-color: #084970;
+    -fx-background-color: #003E26;
     -fx-border-width: 2px;
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-padding: 5px;
     -fx-cursor: hand;
+}
+
+
+
+/*TASKLIST*/
+
+.taskListScrollPane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0px;
+}
+
+.taskListScrollPane .viewport {
+    -fx-background-color: transparent;
+}
+
+.taskListScrollPane .scroll-bar:vertical {
+    -fx-background-color: #e0e0e0;
+    -fx-pref-width: 10px;
+}
+
+.taskListScrollPane .scroll-bar .thumb {
+    -fx-background-color: #888;
+    -fx-background-radius: 10;
+}
+
+.findTaskTextField{
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 15px;
+    -fx-border-color: #000000;
+    -fx-padding: 5px;
+    -fx-text-fill: #000000;
+}
+
+.taskListScrollPane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0px;
+}
+
+.nuevaTareaButton{
+    -fx-text-fill:white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #fffffdee 33%, #87c2f3b6 66%, #fffffdee 100%);
+    -fx-border-radius: 100px;
+    -fx-background-radius: 100px;
+    -fx-background-color: #4CAF50;
+    -fx-border-width: 2px;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tarea-box {
+    -fx-padding: 10;
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 2, 2);
+}
+
+.tarea-titulo {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tarea-fecha {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.check-completado {
+    -fx-background-color: transparent;
+    -fx-border-color: rgb(1, 116, 1);
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-border-width: 2;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+}
+
+.check-completado:selected {
+    -fx-background-color: rgb(50, 168, 50);
+}
+
+.check-completado .box {
+    -fx-background-color: transparent;
+}
+
+.check-completado .mark {
+    -fx-background-color: white;
+    -fx-shape: "M0,5 L2,8 L8,0";
+    -fx-scale-shape: true;
+}
+
+.check-recordatorio {
+    -fx-background-color: transparent;
+    -fx-border-color: #5e5e5e;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-border-width: 2;
+    -fx-min-width: 16px;
+    -fx-min-height: 16px;
+
+}
+
+.check-recordatorio:selected {
+    -fx-background-color: #b1b1b1;
+}
+
+.check-recordatorio .box {
+    -fx-background-color: transparent;
+}
+
+.check-recordatorio .mark {
+    -fx-background-color: white;
+    -fx-shape: "M0,5 L2,8 L8,0";
+    -fx-scale-shape: true;
+}
+
+
+.taskListScrollPane  {
+    -fx-background-color: transparent;
+}
+
+.taskListScrollPane  .viewport {
+    -fx-background-color: transparent;
+}
+
+.taskListScrollPane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 6px; /* grosor de la barra */
+}
+
+.taskListScrollPane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-height: 6px;
+}
+
+.taskListScrollPane .scroll-bar .thumb {
+    -fx-background-color: #2c8040; /* mismo verde que usas en el check */
+    -fx-background-insets: 0;
+    -fx-background-radius: 3px;
+    -fx-min-height: 10px; /* tamaño mínimo del rectángulo vertical */
+    -fx-min-width: 10px;
+}
+
+.taskListScrollPane .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.taskListScrollPane .scroll-bar .increment-button,
+.taskListScrollPane .scroll-bar .decrement-button {
+    -fx-opacity: 0; /* Oculta los botones de flecha */
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+
+
+/*USER DATA*/
+
+.editProfileButton{
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-alignment: left;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 2, 2);
 }

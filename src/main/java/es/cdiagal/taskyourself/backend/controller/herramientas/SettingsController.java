@@ -8,14 +8,12 @@ import es.cdiagal.taskyourself.backend.controller.banderas.Bandera;
 import es.cdiagal.taskyourself.initApp.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 
@@ -28,59 +26,24 @@ import javafx.stage.Stage;
 
 public class SettingsController extends AbstractController {
 
-    @FXML
-    protected JFXButton languageButton;
-
-    @FXML
-    protected Label languageLabel;
-
-    @FXML
-    protected ComboBox<Bandera> languageComboBox;
-
-    @FXML
-    protected JFXButton backButton;
-
-    @FXML
-    protected JFXButton settingsButton;
-
-    @FXML
-    protected Label darkModeLabel;
-
-    @FXML
-    protected JFXToggleButton darkButton;
-
-    @FXML
-    protected Label notiLabel;
-
-    @FXML
-    protected JFXToggleButton notiToggleButton;
-
-    @FXML
-    protected JFXButton fontSizeButton;
-
-    @FXML
-    protected Label fontSizeLabel;
-
-    @FXML
-    protected Label infoAppLabel;
-
-    @FXML
-    protected JFXButton infoAppButton;
-
-    @FXML
-    protected JFXButton homeButton;
-
-    @FXML
-    protected JFXButton calendarButton;
-
-    @FXML
-    protected JFXButton notiButton;
-
-    @FXML
-    protected JFXButton taskButton;
-
-    @FXML
-    protected JFXButton profileButton;
+    @FXML protected JFXButton languageButton;
+    @FXML protected Label languageLabel;
+    @FXML protected ComboBox<Bandera> languageComboBox;
+    @FXML protected JFXButton backButton;
+    @FXML protected JFXButton settingsButton;
+    @FXML protected Label darkModeLabel;
+    @FXML protected JFXToggleButton darkButton;
+    @FXML protected Label notiLabel;
+    @FXML protected JFXToggleButton notiToggleButton;
+    @FXML protected JFXButton fontSizeButton;
+    @FXML protected Label fontSizeLabel;
+    @FXML protected Label infoAppLabel;
+    @FXML protected JFXButton infoAppButton;
+    @FXML protected JFXButton homeButton;
+    @FXML protected JFXButton calendarButton;
+    @FXML protected JFXButton notiButton;
+    @FXML protected JFXButton taskButton;
+    @FXML protected JFXButton profileButton;
 
 
         /**
@@ -135,13 +98,13 @@ public class SettingsController extends AbstractController {
     public void onClicChangeLanguage() {
         Bandera idiomaSeleccionado = (Bandera) languageComboBox.getValue();
         AbstractController.setIdiomaActual(idiomaSeleccionado.getNombre());
-        setPropertiesIdioma(loadIdioma("lan",languageComboBox.getValue().getNombre()));
+        setPropertiesLanguage(loadLanguage("lan",languageComboBox.getValue().getNombre()));
 
-        languageLabel.setText(getPropertiesIdioma().getProperty("languageLabel"));
-        darkModeLabel.setText(getPropertiesIdioma().getProperty("darkModeLabel"));
-        notiLabel.setText(getPropertiesIdioma().getProperty("notiLabel"));
-        fontSizeLabel.setText(getPropertiesIdioma().getProperty("fontSizeLabel"));
-        infoAppLabel.setText(getPropertiesIdioma().getProperty("infoAppLabel"));
+        languageLabel.setText(getPropertiesLanguage().getProperty("languageLabel"));
+        darkModeLabel.setText(getPropertiesLanguage().getProperty("darkModeLabel"));
+        notiLabel.setText(getPropertiesLanguage().getProperty("notiLabel"));
+        fontSizeLabel.setText(getPropertiesLanguage().getProperty("fontSizeLabel"));
+        infoAppLabel.setText(getPropertiesLanguage().getProperty("infoAppLabel"));
     }
         
 

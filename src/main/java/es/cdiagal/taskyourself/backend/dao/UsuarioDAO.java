@@ -33,7 +33,7 @@ public class UsuarioDAO extends Conexion {
                 try(ResultSet cursor = preparedStatement.executeQuery()){
                     if (cursor.next()) {
                         return new UsuarioModel(
-                            cursor.getString("id"),
+                            cursor.getInt("id"),
                             cursor.getString("nombre"),
                             cursor.getString("email"),
                             cursor.getString("password")
@@ -66,7 +66,7 @@ public class UsuarioDAO extends Conexion {
                 try(ResultSet cursor = preparedStatement.executeQuery()){
                     if (cursor.next()) {
                         return new UsuarioModel(
-                            cursor.getString("id"),
+                            cursor.getInt("id"),
                             cursor.getString("nombre"),
                             cursor.getString("email"),
                             cursor.getString("password")

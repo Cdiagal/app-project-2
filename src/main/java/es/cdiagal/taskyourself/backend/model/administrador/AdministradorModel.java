@@ -23,7 +23,7 @@ public class AdministradorModel  extends UsuarioModel{
     }
 
     //Constructor de la clase con atributos comunes heredados de usuario y los específicos.
-    public AdministradorModel (String id, String nombre, String email, String password, String permisos){
+    public AdministradorModel (int id, String nombre, String email, String password, String permisos){
         super(id, nombre, email, password);
         this.permisos = permisos;
     }

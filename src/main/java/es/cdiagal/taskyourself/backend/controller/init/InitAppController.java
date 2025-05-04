@@ -22,26 +22,14 @@ import javafx.stage.Stage;
 public class InitAppController  extends AbstractController{
     
 
-    @FXML
-    protected AnchorPane anchorPane;
+    @FXML protected AnchorPane anchorPane;
+    @FXML protected Label loginLabel;
+    @FXML protected JFXButton loginButton;
+    @FXML protected Label registroLabel;
+    @FXML protected JFXButton registerButton;
+    @FXML protected JFXButton settingsButton;
+    @FXML protected AnchorPane anchorPaneInitFront;
 
-    @FXML
-    protected Label loginLabel;
-
-    @FXML
-    protected JFXButton loginButton;
-
-    @FXML
-    protected Label registroLabel;
-
-    @FXML
-    protected JFXButton registerButton;
-    
-    @FXML
-    protected JFXButton settingsButton;
-
-    @FXML
-    protected AnchorPane anchorPaneInitFront;
     
 
     /**
@@ -56,9 +44,10 @@ public class InitAppController  extends AbstractController{
         Scene scene = new Scene(fxmlLoader.load(), 451,600);
         stage.setTitle("Login");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
         } catch (Exception e) {
-            System.out.println("Error al cargar la página Configuración.");
+            System.out.println("Error al cargar la página Login.");
             e.printStackTrace();
         }
     }
@@ -69,7 +58,18 @@ public class InitAppController  extends AbstractController{
 
     @FXML
     public void onClicOpenRegister(){
-
+        try {
+            Stage stage = (Stage) settingsButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("register.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 451,600);
+            stage.setTitle("Registro");
+            stage.setScene(scene);
+            stage.sizeToScene();
+            stage.show();
+            } catch (Exception e) {
+                System.out.println("Error al cargar la página Registro.");
+                e.printStackTrace();
+            }
     }
 
     /**
@@ -84,6 +84,7 @@ public class InitAppController  extends AbstractController{
         Scene scene = new Scene(fxmlLoader.load(), 451,600);
         stage.setTitle("Configuración");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
         } catch (Exception e) {
             System.out.println("Error al cargar la página Configuración.");
@@ -101,14 +102,14 @@ public class InitAppController  extends AbstractController{
     public void onClicChangeLanguage(){
         String idioma = AbstractController.getIdiomaActual();
 
-        if (getPropertiesIdioma() == null){
-            setPropertiesIdioma(loadIdioma("lan", idioma));
+        if (getPropertiesLanguage() == null){
+            setPropertiesLanguage(loadLanguage("lan", idioma));
         }
-        if (getPropertiesIdioma() != null){
-            loginLabel.setText(getPropertiesIdioma().getProperty("loginLabel"));
-            loginButton.setText(getPropertiesIdioma().getProperty("loginButton"));
-            registroLabel.setText(getPropertiesIdioma().getProperty("registroLabel"));
-            registerButton.setText(getPropertiesIdioma().getProperty("registerButton"));
+        if (getPropertiesLanguage() != null){
+            loginLabel.setText(getPropertiesLanguage().getProperty("loginLabel"));
+            loginButton.setText(getPropertiesLanguage().getProperty("loginButton"));
+            registroLabel.setText(getPropertiesLanguage().getProperty("registroLabel"));
+            registerButton.setText(getPropertiesLanguage().getProperty("registerButton"));
         }
     }
 }

@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 
 public class TareaModel {
-    private String idTarea;
+    private int idTarea;
     private String titulo;
     private String descripcion;
     private LocalDateTime fechaCreacion;
@@ -28,12 +28,12 @@ public class TareaModel {
     }
 
     //Constructor con el id de la clase.
-    public TareaModel(String idTarea){
+    public TareaModel(int idTarea){
         this.idTarea = idTarea;
     }
 
     //Constructor con todas las propiedades de la clase.
-    public TareaModel(String idTarea, String titulo,String descripcion, LocalDateTime fechaCreacion, LocalDateTime fechaObjetivo, boolean tareaCompletada){
+    public TareaModel(int idTarea, String titulo,String descripcion, LocalDateTime fechaCreacion, LocalDateTime fechaObjetivo, boolean tareaCompletada){
         this.idTarea = idTarea;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -44,11 +44,11 @@ public class TareaModel {
 
     //Getters y setters.
 
-    public String getIdTarea() {
+    public int getIdTarea() {
         return this.idTarea;
     }
 
-    public void setIdTarea(String idTarea) {
+    public void setIdTarea(int idTarea) {
         this.idTarea = idTarea;
     }
 
@@ -124,7 +124,7 @@ public class TareaModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(idTarea, titulo, descripcion, fechaCreacion, fechaObjetivo, tareaCompletada);
+        return Objects.hash(idTarea);
     }
 
 

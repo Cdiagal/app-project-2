@@ -23,7 +23,10 @@
                </font>
             </Label>
             <!--LoginButton-->
-            <JFXButton fx:id="loginButton" layoutX="45.0" layoutY="59.0" minHeight="35.0" minWidth="138.0" onAction="#onClicOpenLogin" styleClass="loginButton" stylesheets="@../../../../css/styles.css" text="Iniciar sesión" />
+            <JFXButton fx:id="loginButton" layoutX="45.0" layoutY="59.0" minHeight="35.0" minWidth="138.0" onAction="#onClicOpenLogin" styleClass="loginButton" stylesheets="@../../../../css/styles.css" text="Iniciar sesión">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></JFXButton>
             <!--RegistroLabel-->
             <Label fx:id="registroLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="137.0" text="Registro" textAlignment="CENTER">
                <font>
@@ -37,7 +40,7 @@
       <!--TaskYourself logo-->
       <ImageView fx:id="taskYourselfLogo" fitHeight="247.0" fitWidth="249.0" layoutX="102.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="314.0" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="101.0" AnchorPane.topAnchor="39.0">
          <image>
-            <Image url="@../../../../imagesFxml/LogoTaskYourself.png" />
+            <Image url="@../../../../imagesFxml/Logo-TaskYourself-Verde.png" />
          </image>
       </ImageView>
       <!--Settings button-->

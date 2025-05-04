@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 
 public class UsuarioModel {
-    private String id;
+    private int id;
     private String nombre;
     private String email;
     private String password;
@@ -26,12 +26,12 @@ public class UsuarioModel {
     }
 
     //Constructor con el id del Usuario.
-    public UsuarioModel (String id){
+    public UsuarioModel (int id){
         this.id = id;
     }
 
     //Constructor con todas las propiedades de la clase UsuarioModel.
-    public UsuarioModel (String id, String nombre, String email, String password){
+    public UsuarioModel (int id, String nombre, String email, String password){
         this.id = id;
         this.nombre = nombre;
         this.email = email;
@@ -44,11 +44,11 @@ public class UsuarioModel {
 
 
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

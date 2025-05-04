@@ -1,5 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="registerAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.registro.RegisterController" />
+<!---->
+
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.registro.RegisterController">
+   <children>
+      <VBox fx:id="registerHBox" alignment="CENTER" layoutX="66.0" layoutY="20.0" prefHeight="515.0" prefWidth="320.0">
+         <children>
+            <Label fx:id="registerNameLabel" alignment="CENTER" contentDisplay="CENTER" text="Nombre" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Montserrat ExtraBold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="registerNameTextField" alignment="CENTER" minHeight="35.0" minWidth="220.0" prefColumnCount="20" promptText="Introduce un nombre" styleClass="userLoginTextfield" stylesheets="@../../../../css/styles.css" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label fx:id="nameRegisterAdviseLabel" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="registerEmailLabel" alignment="CENTER" contentDisplay="CENTER" text="Email" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="registerEmailTextField" alignment="CENTER" minHeight="35.0" minWidth="220.0" promptText="Introduzca un email" styleClass="userLoginTextfield" stylesheets="@../../../../css/styles.css">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="registerRepeatEmailTextField" alignment="CENTER" minHeight="35.0" minWidth="220.0" promptText="Repita su email" styleClass="userLoginTextfield" stylesheets="@../../../../css/styles.css">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label fx:id="emailRegisterAdviseLabel" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="registerPasswordLabel" alignment="CENTER" contentDisplay="CENTER" text="Contraseña" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="registerPasswordField" alignment="CENTER" minHeight="35.0" minWidth="220.0" promptText="Introduzca una contraseña" styleClass="userLoginPasswordfield" stylesheets="@../../../../css/styles.css">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </PasswordField>
+            <PasswordField fx:id="registerRepeatPasswordField" alignment="CENTER" minHeight="35.0" minWidth="220.0" promptText="Repita su cotnraseña" styleClass="userLoginPasswordfield" stylesheets="@../../../../css/styles.css">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Label fx:id="passwordRegisterAdviseLabel" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton fx:id="registerUserButton" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="150.0" onAction="#onClickRegister" ripplerFill="#e4e4e4" styleClass="acceptLoginButton" stylesheets="@../../../../css/styles.css" text="Registrar" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Hyperlink fx:id="loginHyperlink" onAction="#onClickOpenLogin" text="¿Ya tienes cuenta? Inicia sesión" />
+         </children>
+      </VBox>
+      <HBox fx:id="hBoxIcons" alignment="CENTER_LEFT" layoutY="531.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="69.0" prefWidth="451.0" styleClass="hBoxIcons" stylesheets="@../../../../css/styles.css">
+         <children>
+            <Pane prefHeight="65.0" prefWidth="72.0">
+               <children>
+                  <JFXButton fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-20.0" layoutY="4.0" onAction="#onClicHome" prefHeight="57.0" prefWidth="53.0" text=" ">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fx:id="homeImagemage" fitHeight="59.0" fitWidth="53.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imagesFxml/-principal.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="10.0" />
+               </padding>
+            </Pane>
+         </children>
+      </HBox>
+      <JFXButton fx:id="settingsButton" alignment="CENTER" layoutX="366.0" layoutY="20.0" onAction="#onClicSettings" text=" ">
+         <graphic>
+            <ImageView fx:id="imageSettings" fitHeight="47.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../imagesFxml/configIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Pane fx:id="loginUserIconPane" layoutX="28.0" layoutY="35.0" prefHeight="79.0" prefWidth="79.0" styleClass="loginUserIconPane" stylesheets="@../../../../css/styles.css">
+         <children>
+            <ImageView fx:id="loginIconPane" fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../imagesFxml/añadir-usuario.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
