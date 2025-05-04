@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="userDataAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="450.0" styleClass="anchorPaneLogin" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.usuario.UserDataController">
+<AnchorPane fx:id="userDataAnchorPane" minHeight="600.0" minWidth="450.0" styleClass="anchorPaneLogin" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.usuario.UserDataController">
    <children>
       <StackPane layoutX="146.0" layoutY="39.0" minHeight="150.0" minWidth="159.0" prefHeight="150.0" prefWidth="159.0">
          <children>
@@ -125,7 +125,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                <image>
-                  <Image url="@../../../../../../../../juego--app--pro/juegoproject/src/main/resources/images/adelante.png" />
+                  <Image url="@../../../../imagesFxml/adelante.png" />
                </image>
             </ImageView>
          </graphic>
@@ -155,7 +155,7 @@
             <Font name="Montserrat Regular" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="openDeleteAccount" layoutX="76.0" layoutY="473.0" minHeight="40.0" minWidth="300.0" onAction="#onClickOpenDelete" styleClass="editProfileButton" text="Eliminar cuenta" textFill="RED" wrapText="true">
+      <JFXButton fx:id="openDeleteAccountButton" layoutX="76.0" layoutY="473.0" minHeight="40.0" minWidth="300.0" onAction="#onClickOpenDelete" styleClass="editProfileButton" text="Eliminar cuenta" textFill="RED" wrapText="true">
          <font>
             <Font name="Montserrat Regular" size="18.0" />
          </font>

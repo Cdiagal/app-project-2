@@ -17,7 +17,7 @@
 
 <!---->
 
-<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController">
+<AnchorPane fx:id="settingsAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="451.0" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController">
    <children>
       <JFXButton fx:id="backButton" contentDisplay="CENTER" layoutX="14.0" layoutY="20.0" onAction="#onClickBackButton" prefHeight="38.0" prefWidth="38.0" text=" " textAlignment="CENTER">
          <graphic>

@@ -6,6 +6,9 @@ import java.util.List;
 import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
+import es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController;
+import es.cdiagal.taskyourself.backend.controller.usuario.UserDataController;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;
 import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil.Pantallas;
 import es.cdiagal.taskyourself.backend.dao.TareaDAO;
 import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
@@ -36,6 +39,7 @@ public class TareaListController extends AbstractController {
     private UsuarioModel usuario;
     private UsuarioDAO usuarioDAO;
     private TareaDAO tareaDAO;
+
     @FXML private Label welcomeTaksListLabel;
     @FXML private Label dateTaksListLabel;
     @FXML private TextField findTaskTextField;
@@ -236,31 +240,7 @@ public class TareaListController extends AbstractController {
      */
     @FXML
     protected void onClickBackButton(){
-        try {
-            if(pantallaOrigen == null) return;
-
-            FXMLLoader fxmlLoader = null;
-            String fxml = null;
-            switch (pantallaOrigen) {
-                case LOGIN -> fxml = "login.fxml";
-                case AJUSTES -> fxml = "settings.fxml";
-                case PERFIL -> fxml = "userData.fxml";
-                case TAREA_NUEVA -> fxml = "newTask.fxml";
-                case TAREA_EDITAR -> fxml = "editTask.fxml";
-                case NOTIFICACIONES -> fxml = "notifications.fxml";
-            }
-
-                if (fxml != null){
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxml));
-                Scene scene = new Scene(fxmlLoader.load(), 450, 600);
-                stage.setTitle("Iniciar sesión");
-                stage.setScene(scene);
-                stage.show();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        volverAPantallaOrigen(backButton, pantallaOrigen);
     }
 
     /**
@@ -271,7 +251,13 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) settingsButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
+
+            SettingsController settingsController = fxmlLoader.getController();
+            settingsController.setUsuario(usuario);
+            settingsController.setPantallaOrigen(PantallasUtil.Pantallas.TAREAS);
+            settingsController.configurarIconos();
+
             stage.setTitle("Ajustes");
             stage.setScene(scene);
             stage.show();
@@ -288,7 +274,7 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) homeButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("initApp.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Login");
             stage.setScene(scene);
             stage.show();
@@ -305,7 +291,10 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) calendarButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("calendar.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
+
+    
+
             stage.setTitle("Calendario");
             stage.setScene(scene);
             stage.show();
@@ -322,7 +311,7 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) notiButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("notifications.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Notificaciones");
             stage.setScene(scene);
             stage.show();
@@ -339,7 +328,13 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) backButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("userTaskList.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
+
+            TareaListController controller = fxmlLoader.getController();
+            controller.setUsuario(usuario);
+            controller.setPantallaOrigen(PantallasUtil.Pantallas.TAREAS);
+            controller.userInit();
+
             stage.setTitle("Lista de tareas");
             stage.setScene(scene);
             stage.show();
@@ -356,7 +351,13 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) profileButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("userData.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
+
+            UserDataController userDataController = fxmlLoader.getController();
+            userDataController.setUsuario(usuario);
+            userDataController.setPantallaOrigen(PantallasUtil.Pantallas.TAREAS);
+            userDataController.usuarioData();
+
             stage.setTitle("Login");
             stage.setScene(scene);
             stage.show();
@@ -373,7 +374,7 @@ public class TareaListController extends AbstractController {
         try {
             Stage stage = (Stage) nuevaTareaButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("newTask.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Nueva tarea");
             stage.setScene(scene);
             stage.show();

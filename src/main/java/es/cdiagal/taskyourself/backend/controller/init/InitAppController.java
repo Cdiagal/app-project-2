@@ -4,6 +4,11 @@ package es.cdiagal.taskyourself.backend.controller.init;
 import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
+import es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil.Pantallas;
+import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
+import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 import es.cdiagal.taskyourself.initApp.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +25,10 @@ import javafx.stage.Stage;
  */
 
 public class InitAppController  extends AbstractController{
-    
+    private UsuarioModel usuario;
+    private Pantallas pantallaOrigen;
+    private UsuarioDAO usuarioDAO;
+
 
     @FXML protected AnchorPane anchorPane;
     @FXML protected Label loginLabel;
@@ -30,7 +38,25 @@ public class InitAppController  extends AbstractController{
     @FXML protected JFXButton settingsButton;
     @FXML protected AnchorPane anchorPaneInitFront;
 
-    
+    /**
+     * Inyección de dependencia del DAO usando la ruta unificada de la BD.
+     */
+    public InitAppController(){
+        super();
+        this.usuarioDAO = new UsuarioDAO(getRutaArchivoBD());
+    }
+
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
+     * Constructor de la clase TareaListController.
+     * @param pantallaOrigen que representa la pantalla de origen.
+     */
+    public void setPantallaOrigen(Pantallas pantallaOrigen) {
+        this.pantallaOrigen = pantallaOrigen;
+    }
 
     /**
      * Metodo que gestiona el acceso a la pantalla de login mediante un boton.
@@ -82,6 +108,12 @@ public class InitAppController  extends AbstractController{
         Stage stage = (Stage) settingsButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 451,600);
+
+        SettingsController controller = fxmlLoader.getController();
+        controller.setPantallaOrigen(PantallasUtil.Pantallas.INICIO);
+        controller.setUsuario(usuario);
+        controller.configurarIconos();
+
         stage.setTitle("Configuración");
         stage.setScene(scene);
         stage.sizeToScene();

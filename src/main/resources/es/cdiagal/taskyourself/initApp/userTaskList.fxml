@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneInit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="450.0" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.tarea.TareaListController">
+<AnchorPane fx:id="anchorPaneInit" minHeight="600.0" minWidth="450.0" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cdiagal.taskyourself.backend.controller.tarea.TareaListController">
 
    <children>
 
@@ -121,7 +121,7 @@
                      <graphic>
                         <ImageView fitHeight="59.0" fitWidth="53.0" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagesFxml/tarea-50.png" />
+                              <Image url="@../../../../imagesFxml/tarea%20azul.png" />
                            </image>
                         </ImageView>
                      </graphic>

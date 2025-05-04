@@ -5,8 +5,14 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil.Pantallas;
 import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
 import es.cdiagal.taskyourself.backend.model.abstractas.Conexion;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * Clase abstracta que gestiona los idiomas y ficheros de la app.
@@ -24,7 +30,7 @@ public abstract class AbstractController extends Conexion{
     /**
      * Atributos privados de la clase.
      */
-
+    protected PantallasUtil.Pantallas pantallaOrigen;
     private UsuarioDAO usuarioDAO;
 
     private Properties propertiesIdioma;
@@ -103,5 +109,49 @@ public abstract class AbstractController extends Conexion{
      */
     public UsuarioDAO getUsuarioServiceModel() {
         return this.usuarioDAO;
+    }
+
+
+    /**
+     * Getter de la clase.
+     * @return pantallaOrigen.
+     */
+    public void setPantallaOrigen(PantallasUtil.Pantallas origen) {
+        this.pantallaOrigen = origen;
+    }
+
+    /**
+     * Funcion que cambia la pantalla de la aplicacion.
+     * @param stage del que viene la escena.
+     */
+    public void volverAPantallaOrigen(Node trigger, Pantallas pantallaOrigen) {
+        try {
+            Stage stage = (Stage) trigger.getScene().getWindow();
+            FXMLLoader loader;
+
+            switch (pantallaOrigen) {
+                case INICIO -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/initApp.fxml"));
+                case LOGIN -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/login.fxml"));
+                case REGISTRO -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/register.fxml"));
+                case TAREAS -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/userTaskList.fxml"));
+                case TAREA_NUEVA -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/newTask.fxml"));
+                case TAREA_EDITAR -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/editTask.fxml"));
+                case AJUSTES -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/settings.fxml"));
+                case PERFIL -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/userData.fxml"));
+                case ELIMINAR_CUENTA -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/deleteAccount.fxml"));
+                case RECUPERAR_CONTRASENIA -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/recovery.fxml"));
+                case NOTIFICACIONES -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/notifications.fxml"));
+                case USUARIO_EDITAR -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/updateUserData.fxml"));
+                default -> loader = new FXMLLoader(getClass().getResource("/es/cdiagal/taskyourself/initApp/initApp.fxml"));
+            }
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.sizeToScene();
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

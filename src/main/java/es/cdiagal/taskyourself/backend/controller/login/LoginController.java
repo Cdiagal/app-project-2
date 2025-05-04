@@ -3,10 +3,12 @@ package es.cdiagal.taskyourself.backend.controller.login;
 import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
+import es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController;
 import es.cdiagal.taskyourself.backend.controller.tarea.TareaController;
 import es.cdiagal.taskyourself.backend.controller.tarea.TareaListController;
 import es.cdiagal.taskyourself.backend.controller.usuario.UserDataController;
 import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil.Pantallas;
 import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
 import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 import es.cdiagal.taskyourself.backend.model.utils.service.HashUtils;
@@ -31,6 +33,7 @@ import javafx.stage.Stage;
 public class LoginController extends AbstractController{
     private UsuarioModel usuario;
     private final UsuarioDAO usuarioDAO;
+    private Pantallas pantallaOrigen;
 
     @FXML protected JFXButton settingsButton;
     @FXML protected Label loginBigLabel;
@@ -54,6 +57,15 @@ public class LoginController extends AbstractController{
     public void setUsuario(UsuarioModel usuario) {
         this.usuario = usuario;
     }
+
+    /**
+     * Constructor de la clase TareaListController.
+     * @param pantallaOrigen que representa la pantalla de origen.
+     */
+    public void setPantallaOrigen(Pantallas pantallaOrigen) {
+        this.pantallaOrigen = pantallaOrigen;
+    }
+
     /**
      * Metodo que inicializa el cambio de idioma en el ComboBox.
      */
@@ -109,7 +121,7 @@ public class LoginController extends AbstractController{
                 controller.userInit();
 
                 Stage stage = (Stage) acceptLoginButton.getScene().getWindow();
-                stage.setTitle(getPropertiesLanguage().getProperty("Panel Principal"));
+                stage.setTitle(getPropertiesLanguage().getProperty("Lista de tareas"));
                 stage.setScene(scene);
                 stage.sizeToScene();
                 stage.show();
@@ -168,6 +180,11 @@ public class LoginController extends AbstractController{
         Stage stage = (Stage) settingsButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 451,600);
+
+        SettingsController controller = fxmlLoader.getController();
+        controller.setUsuario(usuario);
+        controller.setPantallaOrigen(PantallasUtil.Pantallas.LOGIN);
+        
         stage.setTitle("Configuración");
         stage.setScene(scene);
         stage.sizeToScene();

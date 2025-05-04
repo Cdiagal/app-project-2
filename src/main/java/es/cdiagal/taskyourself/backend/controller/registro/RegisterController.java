@@ -6,6 +6,9 @@ import java.util.regex.Pattern;
 import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
+import es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;
+import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil.Pantallas;
 import es.cdiagal.taskyourself.backend.dao.UsuarioDAO;
 import es.cdiagal.taskyourself.backend.model.usuario.UsuarioModel;
 import es.cdiagal.taskyourself.backend.model.utils.service.HashUtils;
@@ -30,6 +33,9 @@ import javafx.stage.Stage;
  */
 public class RegisterController  extends AbstractController{
     private final UsuarioDAO usuarioDAO;
+    private UsuarioModel usuario;
+    private Pantallas pantallaOrigen;
+
 
     @FXML protected JFXButton backButton;
     @FXML protected Label registerNameLabel;
@@ -56,6 +62,20 @@ public class RegisterController  extends AbstractController{
         super();
         this.usuarioDAO = new UsuarioDAO(getRutaArchivoBD());
     }
+
+
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
+     * Constructor de la clase TareaListController.
+     * @param pantallaOrigen que representa la pantalla de origen.
+     */
+    public void setPantallaOrigen(Pantallas pantallaOrigen) {
+        this.pantallaOrigen = pantallaOrigen;
+    }
+
     /**
      * Metodo que aniade un nuevo usuario a la BBDD en el caso de que las validaciones sean correctas, creando una alerta emergente que avisa
      * si ha sido satisfactorio el registro o no.
@@ -104,8 +124,8 @@ public class RegisterController  extends AbstractController{
         try {
             Stage stage = (Stage) homeButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("initApp.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
-            stage.setTitle("Login");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("TaskYourself");
             stage.setScene(scene);
             stage.sizeToScene();
             stage.show();
@@ -144,6 +164,11 @@ public class RegisterController  extends AbstractController{
         Stage stage = (Stage) settingsButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("settings.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 451,600);
+
+        SettingsController controller = fxmlLoader.getController();
+        controller.setUsuario(usuario);
+        controller.setPantallaOrigen(PantallasUtil.Pantallas.REGISTRO);
+        
         stage.setTitle("Configuración");
         stage.setScene(scene);
         stage.sizeToScene();

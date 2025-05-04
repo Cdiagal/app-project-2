@@ -13,6 +13,7 @@ public class PantallasUtil {
         PERFIL,
         ELIMINAR_CUENTA,
         RECUPERAR_CONTRASENIA,
-        NOTIFICACIONES
+        NOTIFICACIONES,
+        USUARIO_EDITAR
     }
 }
