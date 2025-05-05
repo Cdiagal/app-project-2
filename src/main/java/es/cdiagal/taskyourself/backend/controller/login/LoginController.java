@@ -4,7 +4,7 @@ import com.jfoenix.controls.JFXButton;
 
 import es.cdiagal.taskyourself.backend.controller.abstractas.AbstractController;
 import es.cdiagal.taskyourself.backend.controller.herramientas.SettingsController;
-import es.cdiagal.taskyourself.backend.controller.tarea.TareaController;
+import es.cdiagal.taskyourself.backend.controller.tarea.NuevaTareaController;
 import es.cdiagal.taskyourself.backend.controller.tarea.TareaListController;
 import es.cdiagal.taskyourself.backend.controller.usuario.UserDataController;
 import es.cdiagal.taskyourself.backend.controller.utils.PantallasUtil;

@@ -114,13 +114,14 @@ public class UsuarioDAO extends Conexion {
      * @return true si se actualizó correctamente.
      */
     public boolean actualizarUsuario(UsuarioModel usuario) {
-        String sql = "UPDATE usuarios SET nickname = ?, email = ?, password = ? WHERE id = ?";
+        String sql = "UPDATE usuarios SET nombre = ?, email = ?, password = ? WHERE id = ?";
         try {
             Connection conection = conectar();
             try(PreparedStatement preparedStatement = conection.prepareStatement(sql)) {
                 preparedStatement.setString(1, usuario.getNombre());
                 preparedStatement.setString(2, usuario.getEmail());
                 preparedStatement.setString(3, usuario.getPassword());
+                preparedStatement.setInt(4, usuario.getId());
                 return preparedStatement.executeUpdate() > 0;
             }
         } catch (SQLException e) {

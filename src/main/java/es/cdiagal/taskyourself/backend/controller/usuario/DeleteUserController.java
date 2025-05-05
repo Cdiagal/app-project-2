@@ -20,6 +20,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Clase DeleteUserController.
+ * Controlador para la pantalla de eliminación de usuario.
+ * @author cdiagal
+ * @version 1.0.0
+ */
 public class DeleteUserController extends AbstractController {
     private final UsuarioDAO usuarioDAO;
     private Pantallas pantallaOrigen;

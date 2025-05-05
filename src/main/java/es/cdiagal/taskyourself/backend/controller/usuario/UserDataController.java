@@ -122,7 +122,7 @@ public class UserDataController extends AbstractController {
         try {
             Stage stage = (Stage) editProfileButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("updateUserData.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 450, 600);
+            Scene scene = new Scene(fxmlLoader.load());
 
             UpdateUserDataController controller = fxmlLoader.getController();
             controller.setUsuario(usuario);
