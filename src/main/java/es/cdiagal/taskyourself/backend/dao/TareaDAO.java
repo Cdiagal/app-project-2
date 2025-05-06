@@ -15,7 +15,6 @@ import es.cdiagal.taskyourself.backend.model.tarea.TareaModel;
 public class TareaDAO extends Conexion {
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-    
     public TareaDAO(String rutaBD) {
         super(rutaBD);
     }
@@ -42,6 +41,7 @@ public class TareaDAO extends Conexion {
             cerrar();
         }
     }
+
 
     /**
      * Obtiene todas las tareas de la base de datos.

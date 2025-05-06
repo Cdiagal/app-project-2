@@ -26,6 +26,7 @@ import javafx.stage.Stage;
  * @author cdiagal
  * @version 1.0.0
  */
+
 public class DeleteUserController extends AbstractController {
     private final UsuarioDAO usuarioDAO;
     private Pantallas pantallaOrigen;

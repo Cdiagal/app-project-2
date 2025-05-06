@@ -172,7 +172,7 @@ public class UsuarioDAO extends Conexion {
         try {
             Connection conection = conectar();
             try(PreparedStatement preparedStatement = conection.prepareStatement(sql)) {
-                preparedStatement.setString(1, nuevaPassword); // Aquí podrías aplicar hashing si lo deseas
+                preparedStatement.setString(1, nuevaPassword);
                 preparedStatement.setString(2, email);
                 int filas = preparedStatement.executeUpdate();
                 actualizada = filas > 0;
